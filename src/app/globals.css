@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────
+   Tailwind v4 theme
+───────────────────────────────────────── */
+@theme {
+  --font-sans: var(--font-poppins), sans-serif;
+  --font-serif: var(--font-playfair), serif;
+
+  --color-brand-orange: #ff6b3d;
+  --color-brand-blue: #0055ff;
+  --color-brand-dark: #030303;
+}
+
+/* ─────────────────────────────────────────
+   Base reset
+───────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  background-color: #030303;
+  color: #ffffff;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #030303;
+  color: #ffffff;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
 }
+
+::selection {
+  background-color: #ff6b3d;
+  color: #030303;
+}
+
+/* ─────────────────────────────────────────
+   Scrollbar
+───────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #030303; }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #333; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─────────────────────────────────────────
+   Lenis smooth scroll
+───────────────────────────────────────── */
+html.lenis,
+html.lenis body { height: auto; }
+
+.lenis-smooth { scroll-behavior: auto !important; }
+.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis-stopped { overflow: hidden; }
+
+/* ─────────────────────────────────────────
+   Marquee / ticker
+───────────────────────────────────────── */
+@keyframes ticker {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 28s linear infinite;
+  will-change: transform;
+}
+
+.ticker-track:hover { animation-play-state: paused; }
+
+/* ─────────────────────────────────────────
+   Glass card
+───────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ─────────────────────────────────────────
+   Scroll-indicator line
+───────────────────────────────────────── */
+@keyframes scrollDrop {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(14px); }
+}
+.scroll-drop { animation: scrollDrop 1.6s ease-in-out infinite; }
+
+/* ─────────────────────────────────────────
+   Service row hover underline
+───────────────────────────────────────── */
+.service-bar {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.service-row:hover .service-bar { transform: scaleY(1); }
