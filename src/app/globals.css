@@ -13,18 +13,27 @@
 }
 
 /* ─────────────────────────────────────────
-   Base reset
+   Base reset & Poppins global enforcement
 ───────────────────────────────────────── */
 :root {
   background-color: #030303;
   color: #ffffff;
 }
 
+body, button, input, select, textarea, a, span, p, h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+  font-family: var(--font-playfair), serif !important;
+}
+
 body {
   background-color: #030303;
   color: #ffffff;
   overflow-x: hidden;
-  font-family: var(--font-sans);
 }
 
 ::selection {
@@ -98,3 +107,17 @@ html.lenis body { height: auto; }
   transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
 }
 .service-row:hover .service-bar { transform: scaleY(1); }
+
+/* ─────────────────────────────────────────
+   Projects slider — responsive card width
+   Mobile  ≈1.2 visible  (80vw - 20px)
+   ≥768px  ≈2.5 visible  (100vw - 56px) / 2.5 - 20px
+───────────────────────────────────────── */
+:root {
+  --slider-card-w: clamp(240px, calc(80vw - 20px), 340px);
+}
+@media (min-width: 768px) {
+  :root {
+    --slider-card-w: calc((100vw - 56px) / 2.5 - 20px);
+  }
+}

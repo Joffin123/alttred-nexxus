@@ -6,6 +6,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const FRAME_COUNT = 151;
+const frameUrl = (i) =>
+  `/fluid-sequence/ezgif-frame-${String(i).padStart(3, "0")}.png`;
+
 export default function FluidBackground() {
   const canvasRef = useRef(null);
 
@@ -14,6 +18,9 @@ export default function FluidBackground() {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    const frameObj = { frame: 0 };
+    const frames = new Array(FRAME_COUNT);
 
     const drawCover = (img) => {
       if (!img?.complete || !img.naturalWidth) return;
@@ -31,51 +38,47 @@ export default function FluidBackground() {
       ctx.drawImage(img, dx, dy, dw, dh);
     };
 
-    const frameObj = { frame: 0 };
-
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
-      canvas.width = window.innerWidth * dpr;
+      canvas.width  = window.innerWidth  * dpr;
       canvas.height = window.innerHeight * dpr;
-      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.width  = `${window.innerWidth}px`;
       canvas.style.height = `${window.innerHeight}px`;
-      ctx.scale(dpr, dpr);
-      const f = window.fluidFrames;
-      if (f?.[Math.round(frameObj.frame)]) {
-        drawCover(f[Math.round(frameObj.frame)]);
-      }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const cur = frames[Math.round(frameObj.frame)];
+      if (cur?.complete) drawCover(cur);
     };
 
-    let st;
-    const check = setInterval(() => {
-      if (!window.fluidFrames?.length) return;
-      clearInterval(check);
-
-      resize();
-      drawCover(window.fluidFrames[0]);
-
-      st = gsap.to(frameObj, {
-        frame: window.fluidFrames.length - 1,
-        snap: "frame",
-        ease: "none",
-        scrollTrigger: {
-          trigger: "body",
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 0.2,
-          onUpdate: () => {
-            const frames = window.fluidFrames;
-            const i = Math.round(frameObj.frame);
-            if (frames?.[i]) drawCover(frames[i]);
-          },
-        },
-      });
-    }, 50);
-
+    resize();
     window.addEventListener("resize", resize);
 
+    // Load all frames; draw frame 0 as soon as it's ready
+    for (let i = 0; i < FRAME_COUNT; i++) {
+      const img = new Image();
+      img.src = frameUrl(i + 1);
+      img.onload = () => {
+        if (i === 0) drawCover(img);
+      };
+      frames[i] = img;
+    }
+
+    const st = gsap.to(frameObj, {
+      frame: FRAME_COUNT - 1,
+      snap: "frame",
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: 0.4,
+        onUpdate: () => {
+          const i = Math.round(frameObj.frame);
+          if (frames[i]?.complete) drawCover(frames[i]);
+        },
+      },
+    });
+
     return () => {
-      clearInterval(check);
       window.removeEventListener("resize", resize);
       st?.scrollTrigger?.kill();
       st?.kill();
@@ -85,7 +88,6 @@ export default function FluidBackground() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 bg-[#030303] overflow-hidden">
       <canvas ref={canvasRef} className="block w-full h-full" />
-      {/* Radial vignette — makes canvas read as centred arch, not flat wallpaper */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
