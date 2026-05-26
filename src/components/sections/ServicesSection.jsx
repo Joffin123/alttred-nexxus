@@ -7,37 +7,7 @@ export default function ServicesSection() {
     <section id="services"
       className="w-full bg-white text-black py-12 md:py-20 px-8 md:px-14 border-t border-neutral-100 flex flex-col justify-center relative overflow-hidden">
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 pb-14 border-b border-neutral-200 mb-10 w-full">
-        <div>
-          <p className="text-[10px] tracking-[0.35em] text-neutral-400 uppercase font-sans font-bold">
-            WHAT WE DO
-          </p>
-        </div>
-
-        <div>
-          <h2 className="font-sans font-bold text-2xl md:text-[1.75rem] leading-snug tracking-tight text-neutral-950 uppercase">
-            Helping Brands Stand Out,{" "} <br />
-            <span className="text-neutral-500">
-              Not Blend In
-            </span>
-          </h2>
-        </div>
-
-        <div className="flex flex-col gap-4">
-          <p className="text-sm text-neutral-500 font-sans leading-relaxed">
-            Every Brand With A Story Deserves A Platform To Tell It.
-            With Fans Who Listen To Your Story. Realized By Experts
-            With One Shared Passion: Creating Digital Things.
-          </p>
-          <a href="#projects"
-            className="text-[10px] tracking-[0.25em] font-sans font-bold text-neutral-800 uppercase inline-flex items-center gap-2 group w-fit">
-            DISCOVER MORE
-            <span className="group-hover:translate-x-1 transition-transform duration-300">›</span>
-          </a>
-        </div>
-      </div>
-
-      <h2 className="font-sans font-extrabold text-4xl md:text-6xl tracking-tight text-neutral-900 uppercase mb-10">
+      <h2 className="font-sans font-extrabold text-4xl md:text-6xl tracking-tight text-neutral-900 uppercase mb-12 text-center w-full pb-10 border-b border-neutral-200">
         SERVICES
       </h2>
 
