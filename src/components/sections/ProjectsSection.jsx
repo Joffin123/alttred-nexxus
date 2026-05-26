@@ -8,7 +8,7 @@ const N     = PROJECTS.length;
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="w-full bg-white text-black pt-4 pb-6 md:pt-10 md:pb-10 overflow-hidden">
+    <section id="projects" className="w-full bg-white text-black pt-4 pb-16 md:pt-10 md:pb-20 overflow-hidden">
 
       {/* Header */}
       <div className="px-8 md:px-14 flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-14 border-t border-neutral-200 pt-10 md:pt-14">
@@ -33,16 +33,12 @@ export default function ProjectsSection() {
       {/* Infinite ticker */}
       <div className="case-ticker-track">
         {ITEMS.map((p, i) => {
-          const realIdx = i % N;
-          const isLow   = realIdx % 2 === 1;
-
           return (
             <div
               key={i}
               className="case-card"
               style={{
-                width:     "var(--slider-card-w)",
-                marginTop: isLow ? "72px" : "0px",
+                width: "var(--slider-card-w)",
               }}
             >
               <div

@@ -10,7 +10,7 @@ export default function ContactSection() {
   const onSubmit = (e)  => { e.preventDefault(); setSent(true); };
 
   const field =
-    "w-full bg-transparent text-white font-sans text-sm placeholder-neutral-700 outline-none";
+    "w-full bg-transparent text-white font-sans text-sm placeholder-neutral-500 outline-none";
 
   return (
     <section
@@ -38,18 +38,18 @@ export default function ContactSection() {
                 </p>
                 <h2 className="font-sans font-extrabold text-4xl md:text-[2.8rem] tracking-tight text-white uppercase leading-[1.1]">
                   Start<br />
-                  <span className="text-neutral-600">
+                  <span className="text-neutral-400">
                     a project
                   </span>
                 </h2>
               </div>
               <div className="flex flex-col gap-2">
-                <p className="text-[10px] tracking-[0.25em] font-sans text-neutral-600 uppercase">
+                <p className="text-[10px] tracking-[0.25em] font-sans text-neutral-300 uppercase">
                   Response within 24 hrs
                 </p>
                 <a
                   href="mailto:hello@alttrednexxus.agency"
-                  className="text-xs font-sans text-neutral-500 hover:text-white transition-colors duration-300"
+                  className="text-xs font-sans text-neutral-300 hover:text-white transition-colors duration-300"
                 >
                   hello@alttrednexxus.agency
                 </a>
@@ -59,8 +59,8 @@ export default function ContactSection() {
             {/* Right — form */}
             <form onSubmit={onSubmit} className="flex flex-col gap-0">
 
-              <div className="group pb-5 mb-5 border-b border-neutral-800 focus-within:border-neutral-600 transition-colors duration-300">
-                <label className="block text-[9px] tracking-[0.3em] font-sans font-bold text-neutral-700 uppercase mb-2.5 group-focus-within:text-neutral-400 transition-colors duration-300">
+              <div className="group pb-5 mb-5 border-b border-neutral-600 focus-within:border-white transition-colors duration-300">
+                <label className="block text-[9px] tracking-[0.3em] font-sans font-bold text-neutral-300 uppercase mb-2.5 group-focus-within:text-white transition-colors duration-300">
                   Name
                 </label>
                 <input
@@ -70,8 +70,8 @@ export default function ContactSection() {
                 />
               </div>
 
-              <div className="group pb-5 mb-5 border-b border-neutral-800 focus-within:border-neutral-600 transition-colors duration-300">
-                <label className="block text-[9px] tracking-[0.3em] font-sans font-bold text-neutral-700 uppercase mb-2.5 group-focus-within:text-neutral-400 transition-colors duration-300">
+              <div className="group pb-5 mb-5 border-b border-neutral-600 focus-within:border-white transition-colors duration-300">
+                <label className="block text-[9px] tracking-[0.3em] font-sans font-bold text-neutral-300 uppercase mb-2.5 group-focus-within:text-white transition-colors duration-300">
                   Email
                 </label>
                 <input
@@ -81,8 +81,8 @@ export default function ContactSection() {
                 />
               </div>
 
-              <div className="group pb-5 border-b border-neutral-800 focus-within:border-neutral-600 transition-colors duration-300">
-                <label className="block text-[9px] tracking-[0.3em] font-sans font-bold text-neutral-700 uppercase mb-2.5 group-focus-within:text-neutral-400 transition-colors duration-300">
+              <div className="group pb-5 border-b border-neutral-600 focus-within:border-white transition-colors duration-300">
+                <label className="block text-[9px] tracking-[0.3em] font-sans font-bold text-neutral-300 uppercase mb-2.5 group-focus-within:text-white transition-colors duration-300">
                   Message
                 </label>
                 <textarea

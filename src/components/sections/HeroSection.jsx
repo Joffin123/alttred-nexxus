@@ -19,7 +19,7 @@ export default function HeroSection() {
 
   return (
     <section id="hero" ref={heroRef}
-      className="w-full h-screen flex flex-col justify-end px-8 md:px-14 pb-14 relative overflow-hidden">
+      className="w-full h-[70vh] md:h-screen flex flex-col justify-end px-8 md:px-14 pb-14 relative overflow-hidden">
 
       <div className="flex flex-col items-start gap-1">
         <div className="overflow-hidden">

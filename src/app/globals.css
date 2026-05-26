@@ -120,7 +120,6 @@ html.lenis body { height: auto; }
   display: flex;
   width: max-content;
   gap: 20px;
-  padding-bottom: 110px; /* room for staggered lower cards */
   animation: case-scroll 22s linear infinite;
   will-change: transform;
 }
