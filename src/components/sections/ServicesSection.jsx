@@ -37,6 +37,10 @@ export default function ServicesSection() {
         </div>
       </div>
 
+      <h2 className="font-sans font-extrabold text-4xl md:text-6xl tracking-tight text-neutral-900 uppercase mb-10">
+        SERVICES
+      </h2>
+
       <div className="flex flex-col w-full">
         {SERVICES.map((s, i) => (
           <div key={i}

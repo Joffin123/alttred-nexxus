@@ -11,7 +11,7 @@ export default function NavBar() {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY >= window.innerHeight);
+      setScrolled(window.scrollY > 10);
       if (window.scrollY > 120) setMenuOpen(false);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -29,30 +29,32 @@ export default function NavBar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 md:px-14 py-5 select-none transition-all duration-500 ${
+        className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-8 md:px-14 py-7 select-none transition-all duration-500 ${
           scrolled || menuOpen
             ? "bg-[#030303]/90 backdrop-blur-md border-b border-neutral-900/60"
             : "bg-transparent border-b border-transparent"
         }`}
       >
-        {/* Logo */}
-        <a href="#hero" onClick={close}
-          className="font-sans font-bold text-[13px] tracking-[0.18em] text-white hover:opacity-60 transition-opacity relative z-50">
-          ALTTRED NEXXUS
-        </a>
+        {/* Logo — flex-1 left */}
+        <div className="flex-1">
+          <a href="#hero" onClick={close}
+            className="font-sans font-bold text-[13px] tracking-[0.18em] text-white hover:opacity-60 transition-opacity relative z-50">
+            ALTTRED NEXXUS
+          </a>
+        </div>
 
-        {/* Desktop links */}
+        {/* Desktop links — centered */}
         <div className="hidden md:flex items-center gap-9">
           {NAV_LINKS.map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`}
-              className="text-[13px] font-sans font-medium tracking-[0.22em] text-neutral-400 hover:text-white transition-colors duration-300">
+              className="text-[13px] font-sans font-medium tracking-[0.22em] text-white hover:text-[#ff6b3d] transition-colors duration-300">
               {l}
             </a>
           ))}
         </div>
 
-        {/* Right side: CTA + hamburger */}
-        <div className="flex items-center gap-5">
+        {/* Right side: CTA + hamburger — flex-1 right-aligned */}
+        <div className="flex-1 flex items-center justify-end gap-5">
           <MagBtn className="hidden md:block">
             <a href="#talk"
               className="text-[13px] font-sans font-semibold tracking-[0.18em] text-white hover:opacity-60 transition-opacity">

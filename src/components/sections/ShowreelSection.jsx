@@ -27,6 +27,8 @@ export default function ShowreelSection() {
           className="w-full overflow-hidden border border-neutral-800 bg-neutral-950 shadow-2xl transition-all duration-500 ease-out"
           style={desktopStyle("80px", 10)}>
           <div className="relative w-full h-full bg-gradient-to-br from-[#0a2f1d] via-[#103a20] to-[#0a1e12] flex items-center justify-center overflow-hidden">
+            <img src={SHOWREEL[2].image} alt={SHOWREEL[2].label}
+              className="absolute inset-0 w-full h-full object-cover opacity-50" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
             <div className="absolute inset-0 flex items-center justify-center z-10">
               <div className="w-16 h-16 rounded-full border border-white/25 flex items-center justify-center bg-white/10 backdrop-blur-md hover:scale-110 hover:bg-[#ff6b3d] hover:border-transparent transition-all duration-500 cursor-pointer shadow-xl">

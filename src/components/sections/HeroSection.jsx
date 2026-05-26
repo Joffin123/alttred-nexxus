@@ -19,7 +19,7 @@ export default function HeroSection() {
 
   return (
     <section id="hero" ref={heroRef}
-      className="w-full h-screen flex flex-col justify-end px-8 md:px-14 pb-14 relative overflow-hidden">
+      className="w-full h-[82vh] flex flex-col justify-end px-8 md:px-14 pb-14 relative overflow-hidden">
 
       <div className="flex flex-col items-start gap-1">
         <div className="overflow-hidden">
@@ -28,7 +28,7 @@ export default function HeroSection() {
           </h1>
         </div>
         <div className="overflow-hidden">
-          <h1 className="hw font-sans font-extrabold text-[8.5vw] md:text-[5.2vw] tracking-[-0.03em] leading-none uppercase">
+          <h1 className="hw font-sans font-normal text-[8.5vw] md:text-[5.2vw] tracking-[-0.03em] leading-none uppercase">
             For The New Mainstream
           </h1>
         </div>
