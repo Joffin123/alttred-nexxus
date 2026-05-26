@@ -23,11 +23,8 @@ export default function HeroSection() {
 
       <div className="flex flex-col items-start gap-1">
         <div className="overflow-hidden">
-          <h1 className="hw font-sans font-extrabold text-[8.5vw] md:text-[5.2vw] tracking-[-0.03em] leading-none uppercase flex items-baseline gap-x-3 flex-wrap">
-            WE MAKE
-            <span className="font-serif font-bold italic text-[9.5vw] md:text-[6vw] tracking-normal leading-none uppercase">
-              Experience
-            </span>
+          <h1 className="hw font-sans font-extrabold text-[8.5vw] md:text-[5.2vw] tracking-[-0.03em] leading-none uppercase">
+            WE MAKE EXPERIENCE
           </h1>
         </div>
         <div className="overflow-hidden">

@@ -13,7 +13,7 @@ export default function FooterSection() {
         </p>
         <h2 className="font-sans font-extrabold text-[12vw] md:text-[7vw] tracking-[-0.04em] leading-none uppercase">
           BUILD{" "}
-          <span className="font-serif font-normal italic text-neutral-500 lowercase">with</span>{" "}
+          <span className="text-neutral-500 lowercase">with</span>{" "}
           US
         </h2>
         <p className="text-sm text-neutral-400 font-sans font-light leading-relaxed max-w-sm">

@@ -15,7 +15,7 @@ export default function AgencyIntro() {
         <div>
           <h2 className="font-sans font-bold text-2xl md:text-[1.75rem] leading-snug tracking-tight text-white uppercase">
             Helping Brands Stand Out,{" "} <br />
-            <span className="font-serif font-normal italic text-neutral-500 capitalize">
+            <span className="text-neutral-500">
               Not Blend In
             </span>
           </h2>

@@ -1,68 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SHOWREEL } from "@/data";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function ShowreelSection() {
   const [isDesktop, setIsDesktop] = useState(false);
-  const card1Ref = useRef(null);
-  const card2Ref = useRef(null);
-  const card3Ref = useRef(null);
 
   useEffect(() => {
     const checkDesktop = () => setIsDesktop(window.innerWidth >= 1024);
     checkDesktop();
     window.addEventListener("resize", checkDesktop);
     return () => window.removeEventListener("resize", checkDesktop);
-  }, []);
-
-  useEffect(() => {
-    const mm = gsap.matchMedia();
-
-    mm.add("(min-width: 1024px)", () => {
-      const c1 = card1Ref.current;
-      const c2 = card2Ref.current;
-      const c3 = card3Ref.current;
-      if (!c1 || !c2 || !c3) return;
-
-      gsap.set(c3, { borderColor: "#0055ff", boxShadow: "0 0 25px rgba(0, 85, 255, 0.22)" });
-      gsap.set(c2, { borderColor: "rgba(229, 229, 229, 0.4)", boxShadow: "none" });
-      gsap.set(c1, { borderColor: "rgba(229, 229, 229, 0.4)", boxShadow: "none" });
-
-      ScrollTrigger.create({
-        trigger: c2,
-        start: "top-[132px] top",
-        end: "bottom top",
-        onEnter: () => {
-          gsap.to(c3, { borderColor: "rgba(229, 229, 229, 0.4)", boxShadow: "none", duration: 0.2 });
-          gsap.to(c2, { borderColor: "#0055ff", boxShadow: "0 0 25px rgba(0, 85, 255, 0.22)", duration: 0.2 });
-        },
-        onLeaveBack: () => {
-          gsap.to(c2, { borderColor: "rgba(229, 229, 229, 0.4)", boxShadow: "none", duration: 0.2 });
-          gsap.to(c3, { borderColor: "#0055ff", boxShadow: "0 0 25px rgba(0, 85, 255, 0.22)", duration: 0.2 });
-        },
-      });
-
-      ScrollTrigger.create({
-        trigger: c1,
-        start: "top-[180px] top",
-        end: "bottom top",
-        onEnter: () => {
-          gsap.to(c2, { borderColor: "rgba(229, 229, 229, 0.4)", boxShadow: "none", duration: 0.2 });
-          gsap.to(c1, { borderColor: "#0055ff", boxShadow: "0 0 25px rgba(0, 85, 255, 0.22)", duration: 0.2 });
-        },
-        onLeaveBack: () => {
-          gsap.to(c1, { borderColor: "rgba(229, 229, 229, 0.4)", boxShadow: "none", duration: 0.2 });
-          gsap.to(c2, { borderColor: "#0055ff", boxShadow: "0 0 25px rgba(0, 85, 255, 0.22)", duration: 0.2 });
-        },
-      });
-    });
-
-    return () => mm.revert();
   }, []);
 
   const desktopStyle = (top, zIndex) =>
@@ -75,8 +23,8 @@ export default function ShowreelSection() {
       <div className="w-full flex flex-col items-center relative gap-0 lg:min-h-[145vh]">
 
         {/* Card 3 — back-most / UVAIRSPACE */}
-        <div ref={card3Ref}
-          className="w-full rounded-2xl overflow-hidden border bg-neutral-950 shadow-2xl transition-all duration-500 ease-out"
+        <div
+          className="w-full overflow-hidden border border-neutral-800 bg-neutral-950 shadow-2xl transition-all duration-500 ease-out"
           style={desktopStyle("80px", 10)}>
           <div className="relative w-full h-full bg-gradient-to-br from-[#0a2f1d] via-[#103a20] to-[#0a1e12] flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
@@ -95,8 +43,8 @@ export default function ShowreelSection() {
         </div>
 
         {/* Card 2 — middle / NOBLE MISFIT */}
-        <div ref={card2Ref}
-          className="w-full rounded-2xl overflow-hidden border bg-neutral-900 shadow-2xl transition-all duration-500 ease-out"
+        <div
+          className="w-full overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl transition-all duration-500 ease-out"
           style={desktopStyle("128px", 20)}>
           <div className="relative w-full h-full bg-black flex items-center justify-center overflow-hidden">
             <img src={SHOWREEL[1].image} alt={SHOWREEL[1].label}
@@ -117,8 +65,8 @@ export default function ShowreelSection() {
         </div>
 
         {/* Card 1 — front-most / AMINU */}
-        <div ref={card1Ref}
-          className="w-full rounded-2xl overflow-hidden border bg-neutral-900 shadow-2xl transition-all duration-500 ease-out"
+        <div
+          className="w-full overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl transition-all duration-500 ease-out"
           style={desktopStyle("176px", 30)}>
           <div className="relative w-full h-full bg-black flex items-center justify-center overflow-hidden">
             <img src={SHOWREEL[0].image} alt={SHOWREEL[0].label}

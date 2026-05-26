@@ -4,8 +4,8 @@
    Tailwind v4 theme
 ───────────────────────────────────────── */
 @theme {
-  --font-sans: var(--font-poppins), sans-serif;
-  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-chakra), sans-serif;
+  --font-serif: var(--font-chakra), sans-serif;
 
   --color-brand-orange: #ff6b3d;
   --color-brand-blue: #0055ff;
@@ -21,13 +21,13 @@
 }
 
 body, button, input, select, textarea, a, span, p, h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-chakra), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .font-serif {
-  font-family: var(--font-playfair), serif !important;
+  font-family: var(--font-chakra), sans-serif !important;
 }
 
 body {
@@ -109,15 +109,49 @@ html.lenis body { height: auto; }
 .service-row:hover .service-bar { transform: scaleY(1); }
 
 /* ─────────────────────────────────────────
-   Projects slider — responsive card width
+   Case work — infinite ticker
+───────────────────────────────────────── */
+@keyframes case-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+.case-ticker-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  padding-bottom: 110px; /* room for staggered lower cards */
+  animation: case-scroll 22s linear infinite;
+  will-change: transform;
+}
+
+/* pause entire row on hover */
+.case-ticker-track:hover { animation-play-state: paused; }
+
+/* blur by default, reveal on card hover */
+.case-card {
+  filter: blur(5px);
+  opacity: 0.45;
+  transform: scale(0.97);
+  transition: filter 0.45s ease, opacity 0.45s ease, transform 0.45s ease;
+  flex-shrink: 0;
+}
+.case-card:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─────────────────────────────────────────
+   Projects card width
    Mobile  ≈1.2 visible  (80vw - 20px)
-   ≥768px  ≈2.5 visible  (100vw - 56px) / 2.5 - 20px
+   ≥768px  ≈2.3 visible
 ───────────────────────────────────────── */
 :root {
   --slider-card-w: clamp(240px, calc(80vw - 20px), 340px);
 }
 @media (min-width: 768px) {
   :root {
-    --slider-card-w: calc((100vw - 56px) / 2.5 - 20px);
+    --slider-card-w: calc((100vw - 56px) / 2.3 - 20px);
   }
 }

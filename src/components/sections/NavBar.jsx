@@ -45,7 +45,7 @@ export default function NavBar() {
         <div className="hidden md:flex items-center gap-9">
           {NAV_LINKS.map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`}
-              className="text-[10px] font-sans font-medium tracking-[0.28em] text-neutral-400 hover:text-white transition-colors duration-300">
+              className="text-[13px] font-sans font-medium tracking-[0.22em] text-neutral-400 hover:text-white transition-colors duration-300">
               {l}
             </a>
           ))}
@@ -55,7 +55,7 @@ export default function NavBar() {
         <div className="flex items-center gap-5">
           <MagBtn className="hidden md:block">
             <a href="#talk"
-              className="text-[10px] font-sans font-semibold tracking-[0.22em] text-white hover:opacity-60 transition-opacity">
+              className="text-[13px] font-sans font-semibold tracking-[0.18em] text-white hover:opacity-60 transition-opacity">
               LET'S TALK
             </a>
           </MagBtn>

@@ -6,7 +6,8 @@
       "PowerShell(Stop-Process -Id 40416 -Force)",
       "mcp__Claude_in_Chrome__tabs_context_mcp",
       "Bash(git commit -m ' *)",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "Bash(dir \"E:\\\\alttred-nexus\\\\public\\\\clients\")"
     ]
   }
 }

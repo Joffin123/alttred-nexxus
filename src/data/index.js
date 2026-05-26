@@ -1,9 +1,9 @@
 export const NAV_LINKS = ["SERVICES", "PROJECTS", "ABOUT"];
 
 export const PARTNERS = [
-  { name: "NOBLE MISFIT", symbol: "▲" },
-  { name: "AMINU",        symbol: "✦" },
-  { name: "UVAIRSPACE",   symbol: "▼" },
+  { name: "NOBLE MISFIT", symbol: "▲", logo: "/clients/client-1.png" },
+  { name: "AMINU",        symbol: "✦", logo: "/clients/client-2.png" },
+  { name: "UVAIRSPACE",   symbol: "▼", logo: "/clients/client-3.png" },
 ];
 
 export const SERVICES = [
@@ -39,7 +39,7 @@ export const PROJECTS = [
     title: "AMINU",
     desc: "Every Brand With A Story Deserves A Platform To Tell It.",
     tags: ["01 RETAIL & BRAND"],
-    image: "/projects/aminu.png",
+    image: "/projects/aminu.webp",
     gradient: "from-emerald-950 via-rose-950 to-neutral-950",
   },
   {
@@ -47,21 +47,21 @@ export const PROJECTS = [
     title: "NOBLE MISFIT",
     desc: "Every Brand With A Story Deserves A Platform To Tell It.",
     tags: ["02 RETAIL & BRAND"],
-    image: "/projects/noble_misfit.png",
+    image: "/projects/noble_misfit.avif",
     gradient: "from-blue-950 via-neutral-900 to-neutral-950",
   },
   {
     id: "03",
-    title: "UVAIRSPACE",
+    title: "ULTRAVIOLET",
     desc: "Cinematic portal experience with fluid physics overlays.",
     tags: ["03 RETAIL & BRAND"],
-    image: null,
+    image: "/projects/ultraviolet.webp",
     gradient: "from-[#0a2f1d] via-[#103a20] to-[#0a1e12]",
   },
 ];
 
 export const SHOWREEL = [
-  { label: "AMINU — BRAND FILM 2025",         image: "/projects/aminu.png",       num: "01", tabLabel: "VIDEO 1" },
-  { label: "NOBLE MISFIT — IDENTITY SHOOT",   image: "/projects/noble_misfit.png", num: "02", tabLabel: "VIDEO 2" },
-  { label: "UVAIRSPACE — PORTAL EXPERIENCE",  image: null,                         num: "03", tabLabel: "VIDEO 3" },
+  { label: "AMINU — BRAND FILM 2025",           image: "/projects/aminu.webp",        num: "01", tabLabel: "VIDEO 1" },
+  { label: "NOBLE MISFIT — IDENTITY SHOOT",     image: "/projects/noble_misfit.avif", num: "02", tabLabel: "VIDEO 2" },
+  { label: "ULTRAVIOLET — PORTAL EXPERIENCE",   image: "/projects/ultraviolet.webp",  num: "03", tabLabel: "VIDEO 3" },
 ];

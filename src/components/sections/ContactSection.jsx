@@ -38,7 +38,7 @@ export default function ContactSection() {
                 </p>
                 <h2 className="font-sans font-extrabold text-4xl md:text-[2.8rem] tracking-tight text-white uppercase leading-[1.1]">
                   Start<br />
-                  <span className="font-serif font-normal italic text-neutral-600 capitalize">
+                  <span className="text-neutral-600">
                     a project
                   </span>
                 </h2>
