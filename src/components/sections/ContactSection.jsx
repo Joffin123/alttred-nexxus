@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -28,7 +29,12 @@ export default function ContactSection() {
             </h3>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20">
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-8%" }}
+            transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20">
 
             {/* Left — identity */}
             <div className="flex flex-col justify-between gap-10">
@@ -103,7 +109,7 @@ export default function ContactSection() {
               </div>
             </form>
 
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

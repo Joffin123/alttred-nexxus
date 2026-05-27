@@ -21,14 +21,23 @@ export default function HeroSection() {
     <section id="hero" ref={heroRef}
       className="w-full h-[70vh] md:h-screen flex flex-col justify-end px-8 md:px-14 pb-14 relative overflow-hidden">
 
+      {/* Subtle cyber grid */}
+      <div className="absolute inset-0 pointer-events-none cyber-grid" />
+
+      {/* Corner accent — top-right */}
+      <div className="absolute top-24 right-14 pointer-events-none hidden md:flex flex-col items-center gap-2.5">
+        <div className="w-px h-10 bg-gradient-to-b from-transparent via-[#ff6b3d]/50 to-transparent" />
+        <div className="glow-dot" />
+      </div>
+
       <div className="flex flex-col items-start gap-1">
         <div className="overflow-hidden">
-          <h1 className="hw font-sans font-extrabold text-[8.5vw] md:text-[5.2vw] tracking-[-0.03em] leading-none uppercase">
+          <h1 className="hw font-sans font-extrabold text-[8.5vw] md:text-[3.8vw] tracking-[-0.03em] leading-none uppercase">
             WE MAKE EXPERIENCE
           </h1>
         </div>
         <div className="overflow-hidden">
-          <h1 className="hw font-sans font-normal text-[8.5vw] md:text-[5.2vw] tracking-[-0.03em] leading-none uppercase">
+          <h1 className="hw font-sans font-normal text-[8.5vw] md:text-[3.8vw] tracking-[-0.03em] leading-none uppercase">
             For The New Mainstream
           </h1>
         </div>

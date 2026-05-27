@@ -154,3 +154,100 @@ html.lenis body { height: auto; }
     --slider-card-w: calc((100vw - 56px) / 2.3 - 20px);
   }
 }
+
+/* ─────────────────────────────────────────
+   Futuristic / cyber animations
+───────────────────────────────────────── */
+@keyframes scanline-sweep {
+  0%   { top: -2px; opacity: 0; }
+  4%   { opacity: 0.85; }
+  94%  { opacity: 0.5; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes shimmer-sweep {
+  0%   { transform: translateX(-130%) skewX(-15deg); }
+  100% { transform: translateX(260%) skewX(-15deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; filter: blur(8px); }
+  50%       { opacity: 1;   filter: blur(3px); }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
+
+/* Horizontal scan-line that sweeps the hero */
+.scanline {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 107, 61, 0.55) 35%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 107, 61, 0.55) 65%,
+    transparent 100%
+  );
+  animation: scanline-sweep 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Neon left bar on service rows */
+.neon-service-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent 0%, #ff6b3d 50%, transparent 100%);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  box-shadow: 0 0 10px rgba(255, 107, 61, 0.5), 0 0 20px rgba(255, 107, 61, 0.2);
+}
+.service-row-item:hover .neon-service-bar {
+  transform: scaleY(1);
+}
+
+/* Shimmer overlay — used on footer giant text */
+.shimmer-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.11), transparent);
+  transform: translateX(-130%) skewX(-15deg);
+  animation: shimmer-sweep 9s ease-in-out infinite 5s;
+  pointer-events: none;
+}
+
+/* Floating glow dot accent */
+.glow-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: #ff6b3d;
+  box-shadow: 0 0 6px 2px rgba(255, 107, 61, 0.7);
+  animation: glow-pulse 2.4s ease-in-out infinite;
+}
+
+/* Cyber grid helper */
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
