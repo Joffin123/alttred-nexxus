@@ -61,7 +61,7 @@ export const PROJECTS = [
 ];
 
 export const SHOWREEL = [
-  { label: "AMINU — BRAND FILM 2025",           image: "/projects/aminu.webp",        num: "01", tabLabel: "VIDEO 1" },
-  { label: "NOBLE MISFIT — IDENTITY SHOOT",     image: "/projects/noble_misfit.avif", num: "02", tabLabel: "VIDEO 2" },
-  { label: "ULTRAVIOLET — PORTAL EXPERIENCE",   image: "/projects/ultraviolet.webp",  num: "03", tabLabel: "VIDEO 3" },
+  { label: "METRO CASH & CARRY — DIWALI CAMPAIGN FILM", video: "/videos/video 1.mp4", num: "01" },
+  { label: "PASCAL SERO — ORACLE",                      video: "/videos/video 2.mp4", num: "02" },
+  { label: "MANIPAL UNIVERSITY",                        video: "/videos/video 3.mp4", num: "03" },
 ];
