@@ -25,10 +25,10 @@ export default function HeroSection() {
       <div className="absolute inset-0 pointer-events-none cyber-grid" />
 
       {/* Corner accent — top-right */}
-      <div className="absolute top-24 right-14 pointer-events-none hidden md:flex flex-col items-center gap-2.5">
+      {/* <div className="absolute top-24 right-14 pointer-events-none hidden md:flex flex-col items-center gap-2.5">
         <div className="w-px h-10 bg-gradient-to-b from-transparent via-[#ff6b3d]/50 to-transparent" />
         <div className="glow-dot" />
-      </div>
+      </div> */}
 
       <div className="flex flex-col items-start gap-1">
         <div className="overflow-hidden">

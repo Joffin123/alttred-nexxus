@@ -33,7 +33,7 @@ export default function FooterSection() {
           We're always looking for new creative missions. Drop a query or invite us for an interactive pitch.
         </p>
         <MagBtn>
-          <a href="mailto:hello@alttrednexxus.agency"
+          <a href="mailto:matts@alttrednexxus.com"
             className="bg-white text-black font-sans font-bold text-[10px] tracking-[0.25em] uppercase px-10 py-4 rounded-full hover:bg-[#ff6b3d] hover:text-white transition-all duration-300 inline-block shadow-lg">
             START A PROJECT
           </a>

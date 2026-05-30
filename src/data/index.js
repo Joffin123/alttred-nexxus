@@ -1,9 +1,19 @@
 export const NAV_LINKS = ["SERVICES", "PROJECTS", "ABOUT"];
 
 export const PARTNERS = [
-  { name: "NOBLE MISFIT", symbol: "▲", logo: "/clients/client-1.png" },
-  { name: "AMINU",        symbol: "✦", logo: "/clients/client-2.png" },
-  { name: "UVAIRSPACE",   symbol: "▼", logo: "/clients/client-3.png" },
+  { name: "52 SHUTIQ",          logo: "/clients/52-shutiq-logo.png" },
+  { name: "AMINU",              logo: "/clients/aminu-logo.png" },
+  { name: "ARVIEND SUD",        logo: "/clients/arviend-sud-logo.png" },
+  { name: "BATRAA",             logo: "/clients/batraa-logo.png" },
+  { name: "KIO",                logo: "/clients/kio-logo.png" },
+  { name: "LAMCON",             logo: "/clients/lamcon-logo.png" },
+  { name: "MANIPAL UNIVERSITY", logo: "/clients/manipal-university-logo.png" },
+  { name: "NOBLE MISFIT",       logo: "/clients/noble-mistift-logo.png" },
+  { name: "ORACLE",             logo: "/clients/oracle-logo.png" },
+  { name: "SALT",               logo: "/clients/salt-logo.png" },
+  { name: "SUCESS GYAN",        logo: "/clients/sucess-gyan-logo.png" },
+  { name: "SWIGGY",             logo: "/clients/swiggy-logo.png" },
+  { name: "UV",                 logo: "/clients/uv-logo.png" },
 ];
 
 export const SERVICES = [
@@ -28,7 +38,7 @@ export const SERVICES = [
   {
     num: "04",
     title: "Performance Creatives",
-    desc: "Brand Films, Product Launches, Campaign Content. We Shoot, Edit, And Deliver Stories That Move People — And Algorithms.",
+    desc: "From scroll-stopping ads to high-converting campaign assets, we create performance-led visuals backed by insights, iteration, and continuous optimization.",
     tags: ["PERFORMANCE"],
   },
 ];

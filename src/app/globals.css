@@ -73,7 +73,7 @@ html.lenis body { height: auto; }
 .ticker-track {
   display: flex;
   width: max-content;
-  animation: ticker 28s linear infinite;
+  animation: ticker 120s linear infinite;
   will-change: transform;
 }
 
@@ -127,16 +127,13 @@ html.lenis body { height: auto; }
 /* pause entire row on hover */
 .case-ticker-track:hover { animation-play-state: paused; }
 
-/* blur by default, reveal on card hover */
 .case-card {
-  filter: blur(5px);
-  opacity: 0.45;
+  opacity: 0.75;
   transform: scale(0.97);
-  transition: filter 0.45s ease, opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.45s ease, transform 0.45s ease;
   flex-shrink: 0;
 }
 .case-card:hover {
-  filter: none;
   opacity: 1;
   transform: scale(1);
 }

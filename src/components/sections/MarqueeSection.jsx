@@ -11,7 +11,7 @@ export default function MarqueeSection() {
             <img
               src={p.logo}
               alt={p.name}
-              className="h-10 w-auto object-contain opacity-65 hover:opacity-90 transition-opacity duration-300 grayscale"
+              className="h-10 w-auto object-contain opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
             />
           </div>
         ))}

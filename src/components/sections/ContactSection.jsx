@@ -5,10 +5,30 @@ import { motion } from "framer-motion";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent]  = useState(false);
+  const [sent, setSent]   = useState(false);
+  const [busy, setBusy]   = useState(false);
+  const [error, setError] = useState("");
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const onSubmit = (e)  => { e.preventDefault(); setSent(true); };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setBusy(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setSent(true);
+    } catch {
+      setError("Something went wrong. Please try again or email us directly.");
+    } finally {
+      setBusy(false);
+    }
+  };
 
   const field =
     "w-full bg-transparent text-white font-sans text-sm placeholder-neutral-500 outline-none";
@@ -53,11 +73,14 @@ export default function ContactSection() {
                 <p className="text-[10px] tracking-[0.25em] font-sans text-neutral-300 uppercase">
                   Response within 24 hrs
                 </p>
+                <p className="text-[10px] font-sans text-neutral-500 leading-relaxed">
+                  You can contact enquiries on this mail id
+                </p>
                 <a
-                  href="mailto:hello@alttrednexxus.agency"
+                  href="mailto:matts@alttrednexxus.com"
                   className="text-xs font-sans text-neutral-300 hover:text-white transition-colors duration-300"
                 >
-                  hello@alttrednexxus.agency
+                  matts@alttrednexxus.com
                 </a>
               </div>
             </div>
@@ -99,13 +122,17 @@ export default function ContactSection() {
                 />
               </div>
 
-              <div className="pt-7">
+              <div className="pt-7 flex flex-col gap-3">
                 <button
                   type="submit"
-                  className="text-[10px] tracking-[0.28em] font-sans font-bold uppercase text-black bg-white px-8 py-3.5 rounded-full hover:bg-[#ff6b3d] hover:text-white transition-all duration-300"
+                  disabled={busy}
+                  className="text-[10px] tracking-[0.28em] font-sans font-bold uppercase text-black bg-white px-8 py-3.5 rounded-full hover:bg-[#ff6b3d] hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  SEND MESSAGE
+                  {busy ? "SENDING…" : "SEND MESSAGE"}
                 </button>
+                {error && (
+                  <p className="text-[10px] font-sans text-red-400 tracking-wide">{error}</p>
+                )}
               </div>
             </form>
 
