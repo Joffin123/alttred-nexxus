@@ -120,7 +120,7 @@ html.lenis body { height: auto; }
   display: flex;
   width: max-content;
   gap: 20px;
-  animation: case-scroll 22s linear infinite;
+  animation: case-scroll 80s linear infinite;
   will-change: transform;
 }
 

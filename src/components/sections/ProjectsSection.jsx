@@ -53,10 +53,9 @@ export default function ProjectsSection() {
                 ) : (
                   <div className="absolute inset-0 bg-gradient-to-br from-[#0a2f1d] via-[#103a20] to-[#0a1e12] opacity-70" />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
                 <div className="relative z-10 flex justify-between items-center p-5 md:p-6">
-                  <span className="text-[9px] tracking-widest font-sans font-bold uppercase bg-[#0f2d1e]/80 text-[#2ebd59] border border-[#2ebd59]/20 px-3.5 py-1.5 rounded-full backdrop-blur-md">
+                  <span className="text-[9px] tracking-widest font-sans font-bold uppercase bg-black/70 text-[#ff6b3d] border border-neutral-700/50 px-3.5 py-1.5 rounded-full backdrop-blur-md">
                     {p.tags[0]}
                   </span>
                   <span className="font-mono text-xs text-white/40">{p.id}</span>
