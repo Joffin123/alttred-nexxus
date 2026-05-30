@@ -62,7 +62,7 @@ export const PROJECTS = [
   },
   {
     id: "03",
-    title: "ULTRAVIOLET",
+    title: "ULTRAVIOLETTE",
     desc: "Cinematic portal experience with fluid physics overlays.",
     tags: ["03 RETAIL & BRAND"],
     image: "/projects/ultraviolet.webp",
