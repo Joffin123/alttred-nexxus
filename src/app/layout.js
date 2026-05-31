@@ -13,6 +13,9 @@ export const metadata = {
   title: "ALTTRED NEXXUS | We Make Experience For The New Mainstream",
   description:
     "ALTTRED NEXXUS is a digital agency specializing in immersive web design, brand development, video production, and performance creatives.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {
