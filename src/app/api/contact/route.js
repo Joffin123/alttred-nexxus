@@ -1,10 +1,15 @@
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtpout.secureserver.net",
+  port: 465,
+  secure: true,
   auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASSWORD,
+  },
+  tls: {
+    rejectUnauthorized: false,
   },
 });
 
@@ -17,8 +22,8 @@ export async function POST(req) {
 
   try {
     await transporter.sendMail({
-      from: `"ALTTRED NEXXUS" <${process.env.GMAIL_USER}>`,
-      to: "joffingeorge10@gmail.com",
+      from: `"ALTTRED NEXXUS" <${process.env.SMTP_USER}>`,
+      to: "joffin@astack.co",
       replyTo: email,
       subject: `New enquiry from ${name}`,
       html: `

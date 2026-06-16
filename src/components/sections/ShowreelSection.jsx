@@ -32,6 +32,25 @@ function VideoCard({ item, sticky, top, zIndex }) {
     return () => document.removeEventListener("fullscreenchange", onFsChange);
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    const container = containerRef.current;
+    if (!video || !container) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
   const cardStyle = sticky
     ? { position: "sticky", top, zIndex, height: "480px", marginBottom: "1.5rem" }
     : { position: "relative", height: "400px", marginBottom: "1.5rem" };
@@ -46,7 +65,7 @@ function VideoCard({ item, sticky, top, zIndex }) {
         <video
           ref={videoRef}
           src={item.video}
-          autoPlay
+          preload="none"
           loop
           muted
           playsInline

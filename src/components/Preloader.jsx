@@ -3,9 +3,6 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const TOTAL = 151;
-const pad   = (n, size) => String(n).padStart(size, "0");
-
 // ── Three.js knot spinner ──────────────────────────────────────────────────
 function initScene(container) {
   const THREE = window.THREE;
@@ -133,9 +130,6 @@ function initScene(container) {
 
 // ── Component ──────────────────────────────────────────────────────────────
 export default function Preloader({ onComplete }) {
-  const [progress, setProgress] = useState(
-    () => (typeof window !== "undefined" && window.fluidFrames?.length > 0 ? 100 : 0)
-  );
   const [done, setDone] = useState(
     () => typeof window !== "undefined" && window._preloaderDone === true
   );
@@ -167,62 +161,20 @@ export default function Preloader({ onComplete }) {
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // ── Fluid frame loading (unchanged logic) ───────────────────────────────
+  // ── Auto-complete after spinner has played ──────────────────────────────
   useEffect(() => {
     if (window._preloaderDone) {
       onComplete?.();
       return;
     }
 
-    if (Array.isArray(window.fluidFrames) && window.fluidFrames.length > 0) {
-      setProgress(100);
+    const timer = setTimeout(() => {
       window._preloaderDone = true;
       setDone(true);
       setTimeout(() => onComplete?.(), 700);
-      return;
-    }
+    }, 2000);
 
-    if (window._fluidLoading) {
-      const poll = setInterval(() => {
-        setProgress(Math.floor(((window._fluidLoaded ?? 0) / TOTAL) * 100));
-        if (Array.isArray(window.fluidFrames) && window.fluidFrames.length > 0) {
-          clearInterval(poll);
-          setProgress(100);
-          window._preloaderDone = true;
-          setDone(true);
-          setTimeout(() => onComplete?.(), 700);
-        }
-      }, 150);
-      return () => clearInterval(poll);
-    }
-
-    window._fluidLoading = true;
-    window._fluidLoaded  = 0;
-
-    const promises = Array.from({ length: TOTAL }, (_, i) =>
-      new Promise((resolve) => {
-        const img = new Image();
-        img.src   = `/fluid-sequence/ezgif-frame-${pad(i + 1, 3)}.png`;
-        const settle = () => {
-          window._fluidLoaded = (window._fluidLoaded ?? 0) + 1;
-          setProgress(Math.floor((window._fluidLoaded / TOTAL) * 100));
-          resolve(img.complete && img.naturalWidth ? img : null);
-        };
-        img.onload  = settle;
-        img.onerror = settle;
-      })
-    );
-
-    Promise.all(promises).then((imgs) => {
-      window.fluidFrames  = imgs.filter(Boolean);
-      window._fluidLoading = false;
-      setProgress(100);
-      setTimeout(() => {
-        window._preloaderDone = true;
-        setDone(true);
-        setTimeout(() => onComplete?.(), 700);
-      }, 600);
-    });
+    return () => clearTimeout(timer);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Render ───────────────────────────────────────────────────────────────
@@ -238,21 +190,10 @@ export default function Preloader({ onComplete }) {
           }}
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#030303] select-none"
         >
-          {/* Three.js spinner — centred, fills the screen */}
           <div
             ref={mountRef}
             style={{ width: "80vmin", height: "80vmin", maxWidth: 620, maxHeight: 620 }}
           />
-
-          {/* Slim progress bar pinned to bottom */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-48">
-            <div className="w-full h-px bg-neutral-900 relative overflow-hidden">
-              <div
-                className="absolute inset-y-0 left-0 bg-gradient-to-r from-neutral-800 via-white to-neutral-800 transition-all duration-150"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-          </div>
         </motion.div>
       )}
     </AnimatePresence>
