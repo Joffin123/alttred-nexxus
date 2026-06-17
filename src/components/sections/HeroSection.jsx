@@ -2,49 +2,141 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import HeroCanvasBg from "../HeroCanvasBg";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
-  const heroRef = useRef(null);
-  const scrollRef = useRef(null);
+  const heroRef      = useRef(null);
+  const scrollRef    = useRef(null);
+  const line1Ref     = useRef(null);
+  const line2Ref     = useRef(null);
+  const watermarkRef = useRef(null);
 
   useEffect(() => {
-    const words = heroRef.current?.querySelectorAll(".hw");
-    if (words?.length) {
-      gsap.fromTo(words,
-        { y: 70, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.3, stagger: 0.12, ease: "power4.out", delay: 0.25 }
-      );
-    }
+    const el = heroRef.current;
+    const l1 = line1Ref.current;
+    const l2 = line2Ref.current;
+    const si = scrollRef.current;
+    const wt = watermarkRef.current;
+    if (!el || !l1 || !l2 || !si || !wt) return;
+
+    // Single context — ctx.revert() cleans up everything atomically
+    const ctx = gsap.context(() => {
+
+      // ── Initial state (before paint) ───────────────────────────────────────
+      gsap.set([l1, l2], { opacity: 0, y: 40 });
+      gsap.set(si, { opacity: 0 });
+      gsap.set(wt, { opacity: 0, scale: 0.95 });
+
+      // ── Entrance ───────────────────────────────────────────────────────────
+      gsap.to([l1, l2], {
+        opacity: 1, y: 0,
+        duration: 1.2, stagger: 0.14,
+        ease: "power4.out", delay: 0.3,
+      });
+      gsap.to(wt, {
+        opacity: 0.65, scale: 1,
+        duration: 1.8, ease: "power2.out", delay: 0.15,
+      });
+      gsap.to(si, {
+        opacity: 1,
+        duration: 0.9, ease: "power3.out", delay: 1.0,
+      });
+
+      // ── Scroll exit ────────────────────────────────────────────────────────
+      // immediateRender: false — critical: stops scroll tweens from snapshotting
+      // the initial opacity:0 / y:40 state while the entrance is still running.
+
+      gsap.to(si, {
+        opacity: 0, y: -18,
+        ease: "none", immediateRender: false,
+        scrollTrigger: {
+          trigger: el, start: "top top", end: "18% top", scrub: 1,
+        },
+      });
+
+      gsap.to(l1, {
+        y: -110, opacity: 0,
+        ease: "none", immediateRender: false,
+        scrollTrigger: {
+          trigger: el, start: "top top", end: "50% top", scrub: 1.2,
+        },
+      });
+
+      gsap.to(l2, {
+        y: -70, opacity: 0,
+        ease: "none", immediateRender: false,
+        scrollTrigger: {
+          trigger: el, start: "8% top", end: "55% top", scrub: 1.5,
+        },
+      });
+
+      gsap.to(wt, {
+        y: -100, opacity: 0,
+        ease: "none", immediateRender: false,
+        scrollTrigger: {
+          trigger: el, start: "top top", end: "45% top", scrub: 1,
+        },
+      });
+
+      gsap.to(el, {
+        scale: 0.97, filter: "blur(3px)",
+        ease: "none", immediateRender: false,
+        scrollTrigger: {
+          trigger: el, start: "top top", end: "55% top", scrub: 1,
+        },
+      });
+
+    });
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section id="hero" ref={heroRef}
-      className="w-full h-[70vh] md:h-screen flex flex-col justify-end px-8 md:px-14 pb-14 relative overflow-hidden">
+    <section
+      id="hero"
+      ref={heroRef}
+      className="w-full h-[70vh] md:h-screen flex flex-col justify-end px-8 md:px-14 pb-14 relative overflow-hidden"
+    >
+      {/* Interactive Hero Canvas Background */}
+      <HeroCanvasBg />
 
-      {/* Subtle cyber grid */}
-      <div className="absolute inset-0 pointer-events-none cyber-grid" />
-
-      {/* Corner accent — top-right */}
-      {/* <div className="absolute top-24 right-14 pointer-events-none hidden md:flex flex-col items-center gap-2.5">
-        <div className="w-px h-10 bg-gradient-to-b from-transparent via-[#ff6b3d]/50 to-transparent" />
-        <div className="glow-dot" />
-      </div> */}
-
-      <div className="flex flex-col items-start gap-1">
-        <div className="overflow-hidden">
-          <h1 className="hw font-sans font-extrabold text-[8.5vw] md:text-[3.8vw] tracking-[-0.03em] leading-none uppercase">
-            WE MAKE EXPERIENCE
-          </h1>
-        </div>
-        <div className="overflow-hidden">
-          <h1 className="hw font-sans font-normal text-[8.5vw] md:text-[3.8vw] tracking-[-0.03em] leading-none uppercase">
-            For The New Mainstream
-          </h1>
-        </div>
+      {/* Massive animated background watermark */}
+      <div
+        ref={watermarkRef}
+        className="absolute top-[35%] left-1/2 -translate-x-1/2 select-none pointer-events-none z-5 w-full text-center px-8"
+      >
+        <h2 className="hero-bg-title text-[7vw] md:text-[5.5vw] font-black uppercase tracking-widest leading-none">
+          ALTTRED NEXXUS
+        </h2>
       </div>
 
-      <div ref={scrollRef}
-        className="scroll-drop absolute right-10 md:right-14 bottom-14 flex flex-col items-center gap-2 pointer-events-none">
+      {/* Cyber Grid Background layer */}
+      <div className="absolute inset-0 pointer-events-none cyber-grid z-10" />
+
+      {/* Text Content */}
+      <div className="flex flex-col items-start gap-1 relative z-20">
+        <h1
+          ref={line1Ref}
+          className="font-sans font-extrabold text-[5vw] md:text-[3.8vw] tracking-[-0.03em] leading-none uppercase whitespace-nowrap"
+        >
+          WE MAKE EXPERIENCE
+        </h1>
+        <h1
+          ref={line2Ref}
+          className="font-sans font-normal text-[5vw] md:text-[3.8vw] tracking-[-0.03em] leading-none uppercase whitespace-nowrap"
+        >
+          For The New Mainstream
+        </h1>
+      </div>
+
+      {/* Scroll indicator */}
+      <div
+        ref={scrollRef}
+        className="scroll-drop absolute right-10 md:right-14 bottom-14 flex flex-col items-center gap-2 pointer-events-none z-20"
+      >
         <span className="text-[9px] font-sans tracking-[0.35em] text-neutral-500 uppercase">
           SCROLL
         </span>
