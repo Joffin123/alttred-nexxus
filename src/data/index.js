@@ -49,8 +49,9 @@ export const PROJECTS = [
     title: "AMINU",
     desc: "Every Brand With A Story Deserves A Platform To Tell It.",
     tags: ["01 RETAIL & BRAND"],
-    image: "/projects/aminu.webp",
+    image: "/projects/aminu.png",
     gradient: "from-emerald-950 via-rose-950 to-neutral-950",
+    slug: "aminu",
   },
   {
     id: "02",

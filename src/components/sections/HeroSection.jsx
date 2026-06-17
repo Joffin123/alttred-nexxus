@@ -8,19 +8,17 @@ import HeroCanvasBg from "../HeroCanvasBg";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
-  const heroRef      = useRef(null);
-  const scrollRef    = useRef(null);
-  const line1Ref     = useRef(null);
-  const line2Ref     = useRef(null);
-  const watermarkRef = useRef(null);
+  const heroRef   = useRef(null);
+  const scrollRef = useRef(null);
+  const line1Ref  = useRef(null);
+  const line2Ref  = useRef(null);
 
   useEffect(() => {
     const el = heroRef.current;
     const l1 = line1Ref.current;
     const l2 = line2Ref.current;
     const si = scrollRef.current;
-    const wt = watermarkRef.current;
-    if (!el || !l1 || !l2 || !si || !wt) return;
+    if (!el || !l1 || !l2 || !si) return;
 
     // Single context — ctx.revert() cleans up everything atomically
     const ctx = gsap.context(() => {
@@ -28,17 +26,12 @@ export default function HeroSection() {
       // ── Initial state (before paint) ───────────────────────────────────────
       gsap.set([l1, l2], { opacity: 0, y: 40 });
       gsap.set(si, { opacity: 0 });
-      gsap.set(wt, { opacity: 0, scale: 0.95 });
 
       // ── Entrance ───────────────────────────────────────────────────────────
       gsap.to([l1, l2], {
         opacity: 1, y: 0,
         duration: 1.2, stagger: 0.14,
         ease: "power4.out", delay: 0.3,
-      });
-      gsap.to(wt, {
-        opacity: 0.65, scale: 1,
-        duration: 1.8, ease: "power2.out", delay: 0.15,
       });
       gsap.to(si, {
         opacity: 1,
@@ -73,14 +66,6 @@ export default function HeroSection() {
         },
       });
 
-      gsap.to(wt, {
-        y: -100, opacity: 0,
-        ease: "none", immediateRender: false,
-        scrollTrigger: {
-          trigger: el, start: "top top", end: "45% top", scrub: 1,
-        },
-      });
-
       gsap.to(el, {
         scale: 0.97, filter: "blur(3px)",
         ease: "none", immediateRender: false,
@@ -103,16 +88,6 @@ export default function HeroSection() {
       {/* Interactive Hero Canvas Background */}
       <HeroCanvasBg />
 
-      {/* Massive animated background watermark */}
-      <div
-        ref={watermarkRef}
-        className="absolute top-[35%] left-1/2 -translate-x-1/2 select-none pointer-events-none z-5 w-full text-center px-8"
-      >
-        <h2 className="hero-bg-title text-[7vw] md:text-[5.5vw] font-black uppercase tracking-widest leading-none">
-          ALTTRED NEXXUS
-        </h2>
-      </div>
-
       {/* Cyber Grid Background layer */}
       <div className="absolute inset-0 pointer-events-none cyber-grid z-10" />
 
@@ -120,13 +95,13 @@ export default function HeroSection() {
       <div className="flex flex-col items-start gap-1 relative z-20">
         <h1
           ref={line1Ref}
-          className="font-sans font-extrabold text-[5vw] md:text-[3.8vw] tracking-[-0.03em] leading-none uppercase whitespace-nowrap"
+          className="font-sans font-extrabold text-[8vw] md:text-[3.8vw] tracking-[-0.03em] leading-none uppercase md:whitespace-nowrap"
         >
           WE MAKE EXPERIENCE
         </h1>
         <h1
           ref={line2Ref}
-          className="font-sans font-normal text-[5vw] md:text-[3.8vw] tracking-[-0.03em] leading-none uppercase whitespace-nowrap"
+          className="font-sans font-normal text-[8vw] md:text-[3.8vw] tracking-[-0.03em] leading-none uppercase md:whitespace-nowrap"
         >
           For The New Mainstream
         </h1>
