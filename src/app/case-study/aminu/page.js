@@ -190,8 +190,7 @@ export default function AminuCaseStudy() {
             className="font-extrabold text-[9vw] md:text-[5.5vw] tracking-[-0.04em] leading-none uppercase max-w-3xl"
           >
             From Grade D<br />
-            <span className="text-neutral-500">To Grade B —</span><br />
-            In One Week
+            <span className="text-neutral-500">To Grade B</span>
           </motion.h1>
 
           <motion.p
@@ -508,6 +507,29 @@ export default function AminuCaseStudy() {
                 <span className="font-extrabold text-sm text-emerald-400">Grade B — 80%</span>
               </div>
               <AnimBar pct={80} color="#22c55e" delay={0.2} />
+            </div>
+          </div>
+        </FadeUp>
+
+        {/* Before / After GTmetrix screenshots */}
+        <FadeUp delay={0.12} className="mb-10">
+          <p className="text-[9px] tracking-[0.35em] uppercase text-neutral-500 mb-6">GTmetrix Report — Before &amp; After</p>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <p className="text-[9px] tracking-[0.3em] uppercase font-bold text-red-400 mb-3">Before</p>
+              <img
+                src="/projects/before-aminu.jpeg"
+                alt="GTmetrix score before optimisation — Grade D, 60%"
+                className="w-full border border-neutral-800 object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-[9px] tracking-[0.3em] uppercase font-bold text-emerald-400 mb-3">After</p>
+              <img
+                src="/projects/after-aminu.jpeg"
+                alt="GTmetrix score after optimisation — Grade B, 80%"
+                className="w-full border border-neutral-800 object-cover"
+              />
             </div>
           </div>
         </FadeUp>

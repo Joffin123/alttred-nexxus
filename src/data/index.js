@@ -55,17 +55,9 @@ export const PROJECTS = [
   },
   {
     id: "02",
-    title: "NOBLE MISFIT",
-    desc: "Every Brand With A Story Deserves A Platform To Tell It.",
-    tags: ["02 RETAIL & BRAND"],
-    image: "/projects/noble_misfit.avif",
-    gradient: "from-blue-950 via-neutral-900 to-neutral-950",
-  },
-  {
-    id: "03",
     title: "ULTRAVIOLETTE",
     desc: "Cinematic portal experience with fluid physics overlays.",
-    tags: ["03 RETAIL & BRAND"],
+    tags: ["02 RETAIL & BRAND"],
     image: "/projects/ultraviolet.webp",
     gradient: "from-[#0a2f1d] via-[#103a20] to-[#0a1e12]",
   },

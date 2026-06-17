@@ -3,9 +3,6 @@
 import Link from "next/link";
 import { PROJECTS } from "@/data";
 
-// 4 copies — animation goes from 0 → -50%, creating a seamless loop
-const ITEMS = [...PROJECTS, ...PROJECTS, ...PROJECTS, ...PROJECTS];
-
 function CaseCard({ p }) {
   const inner = (
     <>
@@ -56,38 +53,23 @@ function CaseCard({ p }) {
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="w-full bg-white text-black pt-4 pb-16 md:pt-10 md:pb-20 overflow-hidden">
+    <section id="projects" className="w-full bg-white text-black pt-4 pb-16 md:pt-10 md:pb-20">
 
       {/* Header */}
-      <div className="px-8 md:px-14 flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-14 border-t border-neutral-200 pt-10 md:pt-14">
-        <div>
-          <p className="text-[10px] tracking-[0.35em] text-neutral-400 uppercase font-sans font-bold mb-3">
-            SELECTED WORKS
-          </p>
-          <h2 className="font-sans font-extrabold text-3xl md:text-5xl tracking-tight text-neutral-900 leading-tight uppercase">
-            OUR CASE{" "}
-            <span className="text-neutral-500">Work</span>
-          </h2>
-        </div>
-        <a
-          href="#talk"
-          className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] font-sans font-bold text-neutral-400 uppercase hover:text-black transition-colors group mt-5 md:mt-0"
-        >
-          VIEW ALL
-          <span className="group-hover:translate-x-1 transition-transform duration-300">›</span>
-        </a>
+      <div className="px-8 md:px-14 mb-10 md:mb-14 border-t border-neutral-200 pt-10 md:pt-14">
+        <p className="text-[10px] tracking-[0.35em] text-neutral-400 uppercase font-sans font-bold mb-3">
+          SELECTED WORKS
+        </p>
+        <h2 className="font-sans font-extrabold text-3xl md:text-5xl tracking-tight text-neutral-900 leading-tight uppercase">
+          OUR CASE{" "}
+          <span className="text-neutral-500">Work</span>
+        </h2>
       </div>
 
-      {/* Infinite ticker */}
-      <div className="case-ticker-track">
-        {ITEMS.map((p, i) => (
-          <div
-            key={i}
-            className="case-card"
-            style={{ width: "var(--slider-card-w)" }}
-          >
-            <CaseCard p={p} />
-          </div>
+      {/* 2-column grid */}
+      <div className="px-8 md:px-14 grid grid-cols-1 md:grid-cols-2 gap-5">
+        {PROJECTS.map((p) => (
+          <CaseCard key={p.id} p={p} />
         ))}
       </div>
 
