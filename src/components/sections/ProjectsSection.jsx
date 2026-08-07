@@ -16,26 +16,30 @@ function CaseCard({ p }) {
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a2f1d] via-[#103a20] to-[#0a1e12] opacity-70" />
       )}
 
-      <div className="relative z-10 flex justify-between items-center p-5 md:p-6">
-        <span className="text-[9px] tracking-widest font-sans font-bold uppercase bg-black/70 text-[#ff6b3d] border border-neutral-700/50 px-3.5 py-1.5 rounded-full backdrop-blur-md">
-          {p.tags[0]}
-        </span>
-        <span className="font-mono text-xs text-white/40">{p.id}</span>
-      </div>
+      {!p.hideOverlay && (
+        <>
+          <div className="relative z-10 flex justify-between items-center p-5 md:p-6">
+            <span className="text-[9px] tracking-widest font-sans font-bold uppercase bg-black/70 text-[#ff6b3d] border border-neutral-700/50 px-3.5 py-1.5 rounded-full backdrop-blur-md">
+              {p.tags[0]}
+            </span>
+            <span className="font-mono text-xs text-white/40">{p.id}</span>
+          </div>
 
-      <div className="relative z-10 p-5 md:p-8">
-        <h3 className="font-sans font-extrabold text-xl md:text-3xl text-white mb-2 tracking-tight uppercase">
-          {p.title}
-        </h3>
-        <p className="text-xs text-neutral-300 font-sans leading-relaxed max-w-[240px] opacity-80">
-          {p.desc}
-        </p>
-        {p.slug && (
-          <span className="inline-flex items-center gap-1.5 mt-4 text-[9px] tracking-[0.2em] font-sans font-bold uppercase text-[#ff6b3d] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            VIEW CASE STUDY <span>→</span>
-          </span>
-        )}
-      </div>
+          <div className="relative z-10 p-5 md:p-8">
+            <h3 className="font-sans font-extrabold text-xl md:text-3xl text-white mb-2 tracking-tight uppercase">
+              {p.title}
+            </h3>
+            <p className="text-xs text-neutral-300 font-sans leading-relaxed max-w-[240px] opacity-80">
+              {p.desc}
+            </p>
+            {p.slug && (
+              <span className="inline-flex items-center gap-1.5 mt-4 text-[9px] tracking-[0.2em] font-sans font-bold uppercase text-[#ff6b3d] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                VIEW CASE STUDY <span>→</span>
+              </span>
+            )}
+          </div>
+        </>
+      )}
     </>
   );
 

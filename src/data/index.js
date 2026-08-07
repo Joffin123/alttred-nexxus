@@ -58,8 +58,9 @@ export const PROJECTS = [
     title: "ULTRAVIOLETTE",
     desc: "Cinematic portal experience with fluid physics overlays.",
     tags: ["02 RETAIL & BRAND"],
-    image: "/projects/ultraviolet.webp",
+    image: "/case-work.png",
     gradient: "from-[#0a2f1d] via-[#103a20] to-[#0a1e12]",
+    hideOverlay: true,
   },
 ];
 

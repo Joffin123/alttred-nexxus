@@ -60,10 +60,6 @@ export default function ServicesSection() {
                       {t}
                     </span>
                   ))}
-                  <a href="#talk"
-                    className="text-[9px] tracking-widest font-sans font-bold uppercase text-neutral-400 border border-neutral-200 px-3.5 py-1.5 rounded-full select-none hover:text-black hover:border-neutral-400 transition-colors duration-300">
-                    DISCOVER MORE
-                  </a>
                 </div>
               </div>
 
