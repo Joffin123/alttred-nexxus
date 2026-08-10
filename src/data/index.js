@@ -70,30 +70,30 @@ export const WORK_GALLERY = {
   left: [
     {
       type: "video", src: "/landing%20projects/salt.mp4", ratio: "16 / 10",
-      tag: "Salt Oral Care - Oral Care", href: "https://saltoralcare.com/",
-      title: "Video Production", subtitle: "Video Production",
+      tag: "Oral Care", href: "https://saltoralcare.com/",
+      title: "Salt Oral Care", subtitle: "Performance Creatives",
     },
     {
       type: "image", src: "/landing%20projects/tann-trim.png", ratio: "7 / 6",
-      tag: "Tanntrim - Fashion", href: "https://www.tanntrim.com/",
-      title: "Video Production", subtitle: "Video Production",
+      tag: "Fashion", href: "https://www.tanntrim.com/",
+      title: "Tanntrim", subtitle: "Website Design & Development",
     },
     {
       type: "video", src: "/landing%20projects/carbonado.mp4", ratio: "2 / 1",
-      tag: "Carbonado - Travel", href: "https://www.thecarbonado.com",
-      title: "Video Production", subtitle: "Video Production",
+      tag: "Travel", href: "https://www.thecarbonado.com",
+      title: "Carbonado", subtitle: "Website Design & Development",
     },
   ],
   right: [
     {
       type: "image", src: "/landing%20projects/ultraviolette.png", ratio: "5 / 7",
-      tag: "UV Airspace - Automotive", href: "https://airspace.ultraviolette.com/",
-      title: "Video Production", subtitle: "Video Production",
+      tag: "Automotive", href: "https://airspace.ultraviolette.com/",
+      title: "UV Airspace", subtitle: "Website Development & Performance Creatives",
     },
     {
       type: "image", src: "/landing%20projects/aminu.png", ratio: "5 / 7",
-      tag: "Aminu - Skincare", href: "https://www.aminu.life/",
-      title: "Video Production", subtitle: "Video Production",
+      tag: "Skincare", href: "https://www.aminu.life/",
+      title: "Aminu", subtitle: "Performance Creatives & Website Design",
     },
   ],
 };

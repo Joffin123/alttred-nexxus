@@ -80,9 +80,9 @@ export default function WorkGallerySection() {
 
       {/* Header */}
       <div className="px-8 md:px-14 mb-10 md:mb-14 border-t border-neutral-200 pt-10 md:pt-14">
-        <p className="text-[10px] tracking-[0.35em] text-neutral-400 uppercase font-sans font-bold mb-3">
+        {/* <p className="text-[10px] tracking-[0.35em] text-neutral-400 uppercase font-sans font-bold mb-3">
           RECENT WORK
-        </p>
+        </p> */}
         <h2 className="font-sans font-semibold text-3xl md:text-5xl tracking-tight text-neutral-900 leading-tight uppercase">
           FEATURED{" "}
           <span className="text-neutral-500">Works</span>
