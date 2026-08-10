@@ -47,7 +47,7 @@ export default function NavBar() {
         <div className="hidden md:flex items-center gap-9">
           {NAV_LINKS.map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`}
-              className="text-[13px] font-sans font-medium tracking-[0.22em] text-white hover:text-[#ff6b3d] transition-colors duration-300">
+              className="text-[13px] font-sans font-medium tracking-[0.22em] text-white hover:text-neutral-400 transition-colors duration-300">
               {l}
             </a>
           ))}
@@ -114,7 +114,7 @@ export default function NavBar() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.07 + 0.05, duration: 0.35, ease: "easeOut" }}
-                className="font-sans font-extrabold text-[11vw] text-white tracking-[-0.02em] uppercase hover:text-[#ff6b3d] transition-colors duration-300"
+                className="font-sans font-semibold text-[11vw] text-white tracking-[-0.02em] uppercase hover:text-neutral-400 transition-colors duration-300"
               >
                 {l}
               </motion.a>
@@ -126,7 +126,7 @@ export default function NavBar() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: NAV_LINKS.length * 0.07 + 0.1, duration: 0.35 }}
-              className="mt-3 inline-block bg-white text-black font-sans font-bold text-[10px] tracking-[0.25em] uppercase px-10 py-4 rounded-full hover:bg-[#ff6b3d] hover:text-white transition-all duration-300"
+              className="mt-3 inline-block bg-white text-black font-sans font-bold text-[10px] tracking-[0.25em] uppercase px-10 py-4 rounded-full hover:bg-neutral-300 transition-all duration-300"
             >
               LET'S TALK
             </motion.a>

@@ -27,7 +27,13 @@ function GalleryCard({ item }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="group cursor-pointer">
+    <a
+      ref={containerRef}
+      href={item.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block cursor-pointer"
+    >
       <div
         className="relative w-full overflow-hidden bg-neutral-100"
         style={{ aspectRatio: item.ratio }}
@@ -51,20 +57,20 @@ function GalleryCard({ item }) {
           />
         )}
 
-        <span className="absolute top-3 left-3 z-10 text-[8px] md:text-[9px] tracking-wide font-sans font-medium bg-black/35 text-white/90 px-2.5 py-1 rounded-full backdrop-blur-md">
-          Production
+        <span className="absolute top-3 left-3 z-10 text-[8px] md:text-[9px] tracking-wide font-sans font-medium bg-black/45 text-white/90 px-2.5 py-1 rounded-full backdrop-blur-md">
+          {item.tag}
         </span>
       </div>
 
       <div className="pt-2.5">
-        <h3 className="font-sans font-medium text-sm md:text-[15px] text-neutral-900 leading-snug">
+        <h3 className="font-sans font-semibold text-sm md:text-[15px] text-neutral-900 leading-snug">
           {item.title}
         </h3>
         <p className="font-sans text-[11px] md:text-xs text-neutral-400 leading-snug">
           {item.subtitle}
         </p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -77,9 +83,9 @@ export default function WorkGallerySection() {
         <p className="text-[10px] tracking-[0.35em] text-neutral-400 uppercase font-sans font-bold mb-3">
           RECENT WORK
         </p>
-        <h2 className="font-sans font-extrabold text-3xl md:text-5xl tracking-tight text-neutral-900 leading-tight uppercase">
-          IN THE{" "}
-          <span className="text-neutral-500">Frame</span>
+        <h2 className="font-sans font-semibold text-3xl md:text-5xl tracking-tight text-neutral-900 leading-tight uppercase">
+          FEATURED{" "}
+          <span className="text-neutral-500">Works</span>
         </h2>
       </div>
 

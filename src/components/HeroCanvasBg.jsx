@@ -26,9 +26,9 @@ export default function HeroCanvasBg() {
 
     // Brand Colors (RGBA format for alpha styling)
     const colors = [
-      "rgba(255, 107, 61, ",  // brand-orange (#ff6b3d)
-      "rgba(0, 85, 255, ",    // brand-blue (#0055ff)
       "rgba(255, 255, 255, ",  // white
+      "rgba(160, 160, 160, ",  // mid grey
+      "rgba(90, 90, 90, ",     // dark grey
     ];
 
     // ── 3D Cube Class ────────────────────────────────────────────────────────

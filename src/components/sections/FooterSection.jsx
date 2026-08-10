@@ -7,7 +7,7 @@ export default function FooterSection() {
 
       {/* Giant footer text — shimmer overlay, tracking fixed to prevent letter overlap */}
       <div className="w-full border-t border-neutral-900 pt-16 shimmer-overlay">
-        <h1 className="font-sans font-extrabold text-[10vw] leading-none tracking-tight uppercase text-white/[0.08] text-center whitespace-nowrap select-none pointer-events-none">
+        <h1 className="font-sans font-semibold text-[10vw] leading-none tracking-tight uppercase text-white/[0.08] text-center whitespace-nowrap select-none pointer-events-none">
           ALTTRED NEXXUS
         </h1>
       </div>

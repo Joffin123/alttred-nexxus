@@ -34,7 +34,7 @@ export default function AgencyIntro() {
           viewport={{ once: true, margin: "-8%" }}
           custom={1}
           variants={fadeUp}>
-          <h2 className="font-sans font-bold text-2xl md:text-[1.75rem] leading-snug tracking-tight text-white">
+          <h2 className="font-sans font-semibold text-2xl md:text-[1.75rem] leading-snug tracking-tight text-white">
             Helping Brands Stand Out,{" "}<br />
             <span className="text-neutral-500">Not Blend In</span>
           </h2>

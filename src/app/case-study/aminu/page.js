@@ -173,7 +173,7 @@ export default function AminuCaseStudy() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-wrap items-center gap-2 mb-5"
           >
-            <span className="text-[9px] tracking-[0.4em] uppercase font-bold text-[#ff6b3d] bg-[#ff6b3d]/10 border border-[#ff6b3d]/25 px-3 py-1.5 rounded-full">
+            <span className="text-[9px] tracking-[0.4em] uppercase font-bold text-black bg-neutral-100 border border-neutral-300 px-3 py-1.5 rounded-full">
               WEB PERFORMANCE
             </span>
             <span className="text-[9px] tracking-[0.3em] uppercase font-bold text-neutral-400">
@@ -185,7 +185,7 @@ export default function AminuCaseStudy() {
             initial={{ opacity: 0, y: 48 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-            className="font-extrabold text-[9vw] md:text-[5.5vw] tracking-[-0.04em] leading-none uppercase max-w-3xl text-white"
+            className="font-semibold text-[9vw] md:text-[5.5vw] tracking-[-0.04em] leading-none uppercase max-w-3xl text-white"
           >
             From Grade D<br />
             <span className="text-neutral-400">To Grade B</span>
@@ -221,8 +221,8 @@ export default function AminuCaseStudy() {
       {/* ── Score Banner ─────────────────────────────────────────────────── */}
       <section className="px-8 md:px-14 py-14 md:py-20 border-b border-neutral-200">
         <FadeUp className="mb-10">
-          <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-[#ff6b3d] mb-3">GTmetrix Performance Score</p>
-          <h2 className="font-extrabold text-2xl md:text-3xl tracking-tight uppercase text-neutral-900">The Result, At A Glance</h2>
+          <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-black mb-3">GTmetrix Performance Score</p>
+          <h2 className="font-semibold text-2xl md:text-3xl tracking-tight uppercase text-neutral-900">The Result, At A Glance</h2>
         </FadeUp>
 
         <FadeUp delay={0.1}>
@@ -301,8 +301,8 @@ export default function AminuCaseStudy() {
       <section className="px-8 md:px-14 py-20 md:py-28 border-b border-neutral-200">
         <div className="grid md:grid-cols-2 gap-14 md:gap-20 items-start max-w-6xl">
           <FadeUp>
-            <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-[#ff6b3d] mb-5">The Problem</p>
-            <h2 className="font-extrabold text-3xl md:text-4xl tracking-tight leading-tight uppercase mb-6 text-neutral-900">
+            <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-black mb-5">The Problem</p>
+            <h2 className="font-semibold text-3xl md:text-4xl tracking-tight leading-tight uppercase mb-6 text-neutral-900">
               A Homepage That<br />
               <span className="text-neutral-400">Kept Visitors Waiting</span>
             </h2>
@@ -351,8 +351,8 @@ export default function AminuCaseStudy() {
       <section className="px-8 md:px-14 py-20 md:py-28 border-b border-neutral-200">
         <div className="max-w-4xl">
           <FadeUp>
-            <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-[#ff6b3d] mb-5">The Audit</p>
-            <h2 className="font-extrabold text-3xl md:text-4xl tracking-tight leading-tight uppercase mb-6 text-neutral-900">
+            <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-black mb-5">The Audit</p>
+            <h2 className="font-semibold text-3xl md:text-4xl tracking-tight leading-tight uppercase mb-6 text-neutral-900">
               Finding The Real Culprits
             </h2>
           </FadeUp>
@@ -396,8 +396,8 @@ export default function AminuCaseStudy() {
       {/* ── Five Fixes ──────────────────────────────────────────────────── */}
       <section className="px-8 md:px-14 py-20 md:py-28 border-b border-neutral-200">
         <FadeUp className="mb-14">
-          <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-[#ff6b3d] mb-4">What We Did</p>
-          <h2 className="font-extrabold text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-900">
+          <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-black mb-4">What We Did</p>
+          <h2 className="font-semibold text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-900">
             Five Targeted Fixes,<br />
             <span className="text-neutral-400">One Week</span>
           </h2>
@@ -411,7 +411,7 @@ export default function AminuCaseStudy() {
             <FadeUp key={item.num} delay={i * 0.06} className="bg-white p-8 md:p-10 service-row-item relative group">
               <div className="neon-service-bar" />
               <div className="flex items-start justify-between mb-5">
-                <span className="font-mono text-[10px] text-[#ff6b3d] tracking-widest">{item.num}</span>
+                <span className="font-mono text-[10px] text-black tracking-widest">{item.num}</span>
                 <div className="flex flex-wrap gap-1.5 justify-end max-w-[60%]">
                   {item.tags.map((t) => (
                     <span key={t} className="text-[8px] tracking-widest font-bold uppercase px-2 py-1 border border-neutral-200 text-neutral-500">
@@ -420,7 +420,7 @@ export default function AminuCaseStudy() {
                   ))}
                 </div>
               </div>
-              <h3 className="font-extrabold text-lg md:text-xl uppercase tracking-tight mb-3 leading-tight text-neutral-900">
+              <h3 className="font-semibold text-lg md:text-xl uppercase tracking-tight mb-3 leading-tight text-neutral-900">
                 {item.title}
               </h3>
               <p className="text-neutral-600 text-sm leading-relaxed">{item.desc}</p>
@@ -445,8 +445,8 @@ export default function AminuCaseStudy() {
       {/* ── Timeline ────────────────────────────────────────────────────── */}
       <section className="px-8 md:px-14 py-20 md:py-28 border-b border-neutral-200">
         <FadeUp className="mb-14">
-          <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-[#ff6b3d] mb-4">Timeline</p>
-          <h2 className="font-extrabold text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-900">
+          <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-black mb-4">Timeline</p>
+          <h2 className="font-semibold text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-900">
             Seven Days,<br />
             <span className="text-neutral-400">Start to Finish</span>
           </h2>
@@ -460,14 +460,14 @@ export default function AminuCaseStudy() {
               <div className="flex items-start border-b border-neutral-200 last:border-0 py-8">
 
                 <div className="shrink-0 flex items-center gap-3 relative z-10">
-                  <span className="text-[8px] tracking-[0.15em] uppercase font-bold text-[#ff6b3d] leading-none whitespace-nowrap w-[52px] text-right block">
+                  <span className="text-[8px] tracking-[0.15em] uppercase font-bold text-black leading-none whitespace-nowrap w-[52px] text-right block">
                     {item.period}
                   </span>
-                  <div className="w-2.5 h-2.5 rounded-full border-2 border-[#ff6b3d] bg-white shrink-0" />
+                  <div className="w-2.5 h-2.5 rounded-full border-2 border-black bg-white shrink-0" />
                 </div>
 
                 <div className="flex-1 pl-6">
-                  <h3 className="font-extrabold text-[13px] uppercase tracking-[0.06em] mb-2 leading-tight text-neutral-900">
+                  <h3 className="font-semibold text-[13px] uppercase tracking-[0.06em] mb-2 leading-tight text-neutral-900">
                     {item.title}
                   </h3>
                   <p className="text-neutral-500 text-sm leading-relaxed">{item.desc}</p>
@@ -482,8 +482,8 @@ export default function AminuCaseStudy() {
       {/* ── Results ─────────────────────────────────────────────────────── */}
       <section className="px-8 md:px-14 py-20 md:py-28 border-b border-neutral-200">
         <FadeUp className="mb-14">
-          <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-[#ff6b3d] mb-4">Results</p>
-          <h2 className="font-extrabold text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-900">
+          <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-black mb-4">Results</p>
+          <h2 className="font-semibold text-3xl md:text-4xl tracking-tight uppercase leading-tight text-neutral-900">
             A Score You Can See —<br />
             <span className="text-neutral-400">And Feel</span>
           </h2>
@@ -529,7 +529,7 @@ export default function AminuCaseStudy() {
 
         {/* Callout */}
         <FadeUp delay={0.15}>
-          <div className="border-l-2 border-[#ff6b3d] pl-6 md:pl-8 py-2 max-w-2xl">
+          <div className="border-l-2 border-black pl-6 md:pl-8 py-2 max-w-2xl">
             <p className="font-extrabold text-base uppercase tracking-tight mb-2 text-neutral-900">
               From Grade D to Grade B in One Week
             </p>
@@ -543,17 +543,17 @@ export default function AminuCaseStudy() {
       {/* ── CTA ─────────────────────────────────────────────────────────── */}
       <section className="px-8 md:px-14 py-24 md:py-32 text-center bg-white">
         <FadeUp>
-          <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-[#ff6b3d] mb-6">
+          <p className="text-[9px] tracking-[0.4em] uppercase font-bold text-black mb-6">
             Is your site slowing down your revenue?
           </p>
-          <h2 className="font-extrabold text-4xl md:text-6xl tracking-[-0.03em] uppercase leading-tight mb-10 text-neutral-900">
+          <h2 className="font-semibold text-4xl md:text-6xl tracking-[-0.03em] uppercase leading-tight mb-10 text-neutral-900">
             Let's Fix Your<br />
             <span className="text-neutral-400">Speed Score</span>
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <a
               href="/#talk"
-              className="inline-block bg-[#ff6b3d] text-white font-bold text-[11px] tracking-[0.25em] uppercase px-10 py-4 hover:bg-neutral-900 transition-all duration-300"
+              className="inline-block bg-black text-white font-bold text-[11px] tracking-[0.25em] uppercase px-10 py-4 hover:bg-neutral-900 transition-all duration-300"
             >
               GET A FREE AUDIT
             </a>

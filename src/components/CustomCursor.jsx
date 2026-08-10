@@ -165,7 +165,7 @@ export default function CustomCursor() {
             ${hoveredType === "" ? "w-10 h-10 -ml-5 -mt-5" : ""}
             ${hoveredType === "inverted" ? "w-16 h-16 -ml-8 -mt-8 bg-white" : ""}
             ${hoveredType === "magnetic" ? "w-14 h-14 -ml-7 -mt-7 bg-white" : ""}
-            ${hoveredType === "service" ? "w-20 h-20 -ml-10 -mt-10 bg-[#ff6b3d]" : ""}
+            ${hoveredType === "service" ? "w-20 h-20 -ml-10 -mt-10 bg-white" : ""}
             ${hoveredType === "project" ? "w-24 h-24 -ml-12 -mt-12 bg-white" : ""}
           `}
         >

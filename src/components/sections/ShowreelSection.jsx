@@ -79,7 +79,7 @@ function VideoCard({ item, sticky, top, zIndex }) {
         </div>
         <button
           onClick={toggleFullscreen}
-          className="absolute top-4 right-7 z-20 flex items-center justify-center w-8 h-8 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white/60 hover:text-white hover:bg-[#ff6b3d]/80 hover:border-transparent transition-all duration-300 cursor-pointer"
+          className="absolute top-4 right-7 z-20 flex items-center justify-center w-8 h-8 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white/60 hover:text-white hover:bg-white/20 hover:border-transparent transition-all duration-300 cursor-pointer"
           aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
         >
           {isFullscreen ? (
@@ -99,7 +99,7 @@ function VideoCard({ item, sticky, top, zIndex }) {
         </span>
         <button
           onClick={toggleSound}
-          className="absolute bottom-5 right-7 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white/70 hover:text-white hover:bg-[#ff6b3d]/80 hover:border-transparent transition-all duration-300 text-[10px] font-sans tracking-[0.2em] uppercase font-semibold cursor-pointer"
+          className="absolute bottom-5 right-7 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white/70 hover:text-white hover:bg-white/20 hover:border-transparent transition-all duration-300 text-[10px] font-sans tracking-[0.2em] uppercase font-semibold cursor-pointer"
           aria-label={muted ? "Unmute" : "Mute"}
         >
           {muted ? (

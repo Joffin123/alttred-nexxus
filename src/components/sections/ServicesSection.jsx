@@ -22,7 +22,7 @@ export default function ServicesSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-5%" }}
         transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
-        className="font-sans font-extrabold text-4xl md:text-6xl tracking-tight text-neutral-900 uppercase mb-12 text-center w-full pb-10 border-b border-neutral-200">
+        className="font-sans font-semibold text-4xl md:text-6xl tracking-tight text-neutral-900 uppercase mb-12 text-center w-full pb-10 border-b border-neutral-200">
         SERVICES
       </motion.h2>
 
@@ -43,10 +43,10 @@ export default function ServicesSection() {
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] lg:grid-cols-[1.2fr_1fr] gap-8 items-start pl-4 md:pl-6">
 
               <div className="flex flex-col gap-2">
-                <span className="font-mono text-xs text-neutral-400 select-none group-hover:text-[#ff6b3d] transition-colors duration-300">
+                <span className="font-mono text-xs text-neutral-400 select-none group-hover:text-black transition-colors duration-300">
                   {s.num}
                 </span>
-                <h3 className="font-sans font-extrabold text-3xl md:text-[2.6rem] tracking-tight text-neutral-900 leading-none uppercase group-hover:translate-x-1.5 transition-transform duration-400">
+                <h3 className="font-sans font-semibold text-3xl md:text-[2.6rem] tracking-tight text-neutral-900 leading-none uppercase group-hover:translate-x-1.5 transition-transform duration-400">
                   {s.title}
                 </h3>
               </div>

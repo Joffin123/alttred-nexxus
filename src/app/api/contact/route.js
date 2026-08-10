@@ -32,7 +32,7 @@ export async function POST(req) {
           <p style="color:#666;font-size:13px;margin-top:0">via ALTTRED NEXXUS contact form</p>
           <table style="width:100%;border-collapse:collapse;margin-top:20px;font-size:14px">
             <tr><td style="padding:10px 0;border-bottom:1px solid #eee;width:90px;color:#888;vertical-align:top">Name</td><td style="padding:10px 0;border-bottom:1px solid #eee">${name}</td></tr>
-            <tr><td style="padding:10px 0;border-bottom:1px solid #eee;color:#888;vertical-align:top">Email</td><td style="padding:10px 0;border-bottom:1px solid #eee"><a href="mailto:${email}" style="color:#ff6b3d">${email}</a></td></tr>
+            <tr><td style="padding:10px 0;border-bottom:1px solid #eee;color:#888;vertical-align:top">Email</td><td style="padding:10px 0;border-bottom:1px solid #eee"><a href="mailto:${email}" style="color:#000">${email}</a></td></tr>
             <tr><td style="padding:10px 0;color:#888;vertical-align:top">Message</td><td style="padding:10px 0;white-space:pre-wrap">${message}</td></tr>
           </table>
         </div>

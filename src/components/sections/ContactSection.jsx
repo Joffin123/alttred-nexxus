@@ -43,8 +43,8 @@ export default function ContactSection() {
         {/* Two-column layout: heading left, form right */}
         {sent ? (
           <div className="py-16 flex flex-col gap-4">
-            <p className="text-[10px] tracking-[0.35em] text-[#ff6b3d] uppercase font-sans font-bold">SENT</p>
-            <h3 className="font-sans font-extrabold text-3xl tracking-tight text-white uppercase">
+            <p className="text-[10px] tracking-[0.35em] text-white uppercase font-sans font-bold">SENT</p>
+            <h3 className="font-sans font-semibold text-3xl tracking-tight text-white uppercase">
               We'll be in touch.
             </h3>
           </div>
@@ -59,10 +59,7 @@ export default function ContactSection() {
             {/* Left — identity */}
             <div className="flex flex-col justify-between gap-10">
               <div>
-                <p className="text-[10px] tracking-[0.35em] text-[#ff6b3d] uppercase font-sans font-bold mb-5">
-                  GET IN TOUCH
-                </p>
-                <h2 className="font-sans font-extrabold text-4xl md:text-[2.8rem] tracking-tight text-white uppercase leading-[1.1]">
+                <h2 className="font-sans font-semibold text-4xl md:text-[2.8rem] tracking-tight text-white uppercase leading-[1.1]">
                   Start<br />
                   <span className="text-neutral-400">
                     a project
@@ -126,7 +123,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={busy}
-                  className="text-[10px] tracking-[0.28em] font-sans font-bold uppercase text-black bg-white px-8 py-3.5 rounded-full hover:bg-[#ff6b3d] hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="text-[10px] tracking-[0.28em] font-sans font-bold uppercase text-black bg-white px-8 py-3.5 rounded-full hover:bg-neutral-300 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {busy ? "SENDING…" : "SEND MESSAGE"}
                 </button>
