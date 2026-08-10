@@ -1,11 +1,10 @@
-import { Chakra_Petch } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
-const chakraPetch = Chakra_Petch({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-chakra",
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -22,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${chakraPetch.variable} h-full scroll-smooth`}
+      className={`${manrope.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-[#030303] text-white antialiased">
         {children}

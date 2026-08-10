@@ -52,11 +52,6 @@ export default function AgencyIntro() {
             With Fans Who Listen To Your Story. Realized By Experts
             With One Shared Passion: Creating Digital Things.
           </p>
-          <a href="#showreel-sec"
-            className="text-[10px] tracking-[0.25em] font-sans font-semibold text-white uppercase inline-flex items-center gap-2 group">
-            DISCOVER MORE
-            <span className="group-hover:translate-x-1 transition-transform duration-300">›</span>
-          </a>
         </motion.div>
 
       </div>
