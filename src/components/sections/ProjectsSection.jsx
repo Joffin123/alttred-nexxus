@@ -61,8 +61,8 @@ export default function ProjectsSection() {
 
       {/* Header */}
       <div className="px-8 md:px-14 mb-10 md:mb-14 border-t border-neutral-200 pt-10 md:pt-14">
-        <h2 className="font-sans font-semibold text-3xl md:text-5xl tracking-tight text-neutral-900 leading-tight uppercase">
-          CASE{" "}
+        <h2 className="font-sans font-semibold text-3xl md:text-5xl tracking-tight text-neutral-900 leading-tight">
+          Case{" "}
           <span className="text-neutral-500">Study</span>
         </h2>
       </div>
