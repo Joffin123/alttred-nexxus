@@ -64,6 +64,20 @@ export const PROJECTS = [
   },
 ];
 
+// Two explicit columns — the left column is wider than the right.
+// `ratio` is the rendered aspect ratio of each tile (media is object-cover cropped to it).
+export const WORK_GALLERY = {
+  left: [
+    { type: "video", src: "/landing%20projects/salt.mp4",      ratio: "16 / 10", title: "Video Production", subtitle: "Video Production" },
+    { type: "image", src: "/landing%20projects/tann-trim.png", ratio: "7 / 6",   title: "Video Production", subtitle: "Video Production" },
+    { type: "video", src: "/landing%20projects/carbonado.mp4", ratio: "2 / 1",   title: "Video Production", subtitle: "Video Production" },
+  ],
+  right: [
+    { type: "image", src: "/landing%20projects/ultraviolette.png", ratio: "5 / 7", title: "Video Production", subtitle: "Video Production" },
+    { type: "image", src: "/landing%20projects/aminu.png",         ratio: "5 / 7", title: "Video Production", subtitle: "Video Production" },
+  ],
+};
+
 export const SHOWREEL = [
   { label: "METRO CASH & CARRY — DIWALI CAMPAIGN FILM", video: "/videos/video 1.mp4", num: "01" },
   { label: "PASCAL SERO — ORACLE",                      video: "/videos/video 2.mp4", num: "02" },

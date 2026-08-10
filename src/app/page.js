@@ -14,6 +14,7 @@ import MarqueeSection from "@/components/sections/MarqueeSection";
 import AgencyIntro from "@/components/sections/AgencyIntro";
 import ShowreelSection from "@/components/sections/ShowreelSection";
 import ServicesSection from "@/components/sections/ServicesSection";
+import WorkGallerySection from "@/components/sections/WorkGallerySection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import FooterSection from "@/components/sections/FooterSection";
@@ -43,6 +44,7 @@ export default function Home() {
                 <AgencyIntro />
                 <ShowreelSection />
                 <ServicesSection />
+                <WorkGallerySection />
                 <ProjectsSection />
                 <ContactSection />
                 <FooterSection />
