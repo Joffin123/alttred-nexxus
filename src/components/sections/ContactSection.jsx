@@ -14,6 +14,12 @@ export default function ContactSection() {
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
+  const reset = () => {
+    setForm({ name: "", email: "", message: "" });
+    setTurnstileToken("");
+    setSent(false);
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     if (!turnstileToken) {
@@ -54,15 +60,7 @@ export default function ContactSection() {
       <div className="max-w-3xl mx-auto">
 
         {/* Two-column layout: heading left, form right */}
-        {sent ? (
-          <div className="py-16 flex flex-col gap-4">
-            <p className="text-[10px] tracking-[0.35em] text-white uppercase font-sans font-bold">SENT</p>
-            <h3 className="font-sans font-semibold text-3xl tracking-tight text-white uppercase">
-              We&apos;ll be in touch.
-            </h3>
-          </div>
-        ) : (
-          <motion.div
+        <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-8%" }}
@@ -95,7 +93,40 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Right — form */}
+            {/* Right — form / success */}
+            {sent ? (
+              <motion.div
+                key="sent"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
+                className="flex flex-col justify-between min-h-[320px] md:min-h-[380px]"
+              >
+                <div className="flex flex-col gap-5">
+                  <p className="text-[9px] tracking-[0.3em] font-sans font-bold text-neutral-300 uppercase">
+                    Message sent
+                  </p>
+                  <h3 className="font-sans font-semibold text-3xl md:text-4xl tracking-tight text-white uppercase leading-[1.1]">
+                    Thank you{form.name ? `, ${form.name.split(" ")[0]}` : ""}.
+                    <br />
+                    <span className="text-neutral-400">We&apos;ll be in touch.</span>
+                  </h3>
+                  <p className="text-xs font-sans text-neutral-500 leading-relaxed max-w-xs">
+                    Expect a reply within 24 hours at{" "}
+                    <span className="text-neutral-300">{form.email}</span>.
+                  </p>
+                </div>
+                <div className="pt-10 border-t border-neutral-800">
+                  <button
+                    type="button"
+                    onClick={reset}
+                    className="text-[10px] tracking-[0.28em] font-sans font-bold uppercase text-neutral-400 hover:text-white transition-colors duration-300"
+                  >
+                    Send another message
+                  </button>
+                </div>
+              </motion.div>
+            ) : (
             <form onSubmit={onSubmit} className="flex flex-col gap-0">
 
               <div className="group pb-5 mb-5 border-b border-neutral-600 focus-within:border-white transition-colors duration-300">
@@ -135,7 +166,7 @@ export default function ContactSection() {
               <div className="pt-7 flex flex-col gap-3">
                 <Turnstile
                   ref={turnstileRef}
-                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAE6CEWtfrKTVgHqf"}
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAE6bWGblrsXoW3Cb"}
                   onSuccess={(token) => setTurnstileToken(token)}
                   onExpire={() => setTurnstileToken("")}
                   onError={() => setTurnstileToken("")}
@@ -152,9 +183,9 @@ export default function ContactSection() {
                 )}
               </div>
             </form>
+            )}
 
           </motion.div>
-        )}
       </div>
     </section>
   );
