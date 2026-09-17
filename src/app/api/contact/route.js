@@ -50,7 +50,7 @@ if (!turnstileResult.success) {
   try {
     await transporter.sendMail({
       from: `"ALTTRED NEXXUS" <${process.env.SMTP_USER}>`,
-      to: "joffin@astack.co",
+      to: process.env.SMTP_USER,
       replyTo: email,
       subject: `New enquiry from ${name}`,
       html: `
