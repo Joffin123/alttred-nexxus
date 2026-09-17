@@ -1,30 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent]   = useState(false);
   const [busy, setBusy]   = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef(null);
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    if (!turnstileToken) {
+      setError("Please complete the verification.");
+      return;
+    }
     setBusy(true);
     setError("");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+            ...form,
+            turnstileToken,
+        }),
       });
       if (!res.ok) throw new Error("Failed to send");
       setSent(true);
     } catch {
       setError("Something went wrong. Please try again or email us directly.");
+      // Tokens are single-use — reset so the next attempt gets a fresh one.
+      setTurnstileToken("");
+      turnstileRef.current?.reset();
     } finally {
       setBusy(false);
     }
@@ -45,7 +58,7 @@ export default function ContactSection() {
           <div className="py-16 flex flex-col gap-4">
             <p className="text-[10px] tracking-[0.35em] text-white uppercase font-sans font-bold">SENT</p>
             <h3 className="font-sans font-semibold text-3xl tracking-tight text-white uppercase">
-              We'll be in touch.
+              We&apos;ll be in touch.
             </h3>
           </div>
         ) : (
@@ -120,6 +133,13 @@ export default function ContactSection() {
               </div>
 
               <div className="pt-7 flex flex-col gap-3">
+                <Turnstile
+                  ref={turnstileRef}
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                  onSuccess={(token) => setTurnstileToken(token)}
+                  onExpire={() => setTurnstileToken("")}
+                  onError={() => setTurnstileToken("")}
+                />
                 <button
                   type="submit"
                   disabled={busy}

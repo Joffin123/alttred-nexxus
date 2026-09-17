@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function HeroImage() {
   const common = {
-    alt: "Be Alttred — we are a design agency with good taste.",
+    alt: "Alttred Nexxus — web design, development and digital experiences.",
     sizes: "100vw",
   };
 
@@ -64,11 +64,14 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section
-      id="hero"
-      ref={heroRef}
-      className="w-full relative overflow-hidden"
-    >
+  <section
+    id="hero"
+    ref={heroRef}
+    className="w-full relative overflow-hidden"
+  >
+    <h1 className="sr-only">
+      Alttred Nexxus — Web Design, Development & Digital Experiences
+    </h1>
       {/* Hero Image */}
       <div ref={imageRef} className="relative w-full">
         <HeroImage />

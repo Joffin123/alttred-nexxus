@@ -9,10 +9,25 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: "ALTTRED NEXXUS | We Make Experience For The New Mainstream",
+  title: "Alttred Nexxus | Web Design, Development & Digital Experiences",
   description:
     "ALTTRED NEXXUS is a digital agency specializing in immersive web design, brand development, video production, and performance creatives.",
-  icons: {
+  alternates: {
+  canonical: "https://www.alttrednexxus.com",
+},
+openGraph: {
+  title: "Alttred Nexxus | Web Design, Development & Digital Experiences",
+  description:
+    "ALTTRED NEXXUS is a digital agency specializing in immersive web design, brand development, video production, and performance creatives.",
+  url: "https://www.alttrednexxus.com",
+  siteName: "Alttred Nexxus",
+  type: "website",
+  images: ["/social-preview.png"],
+},
+verification: {
+  google: "-lt8wmrBAeH4hig8vZFMV0nieZqEGvX-gkFyE9Js-iA",
+},
+    icons: {
     icon: "/favicon.svg",
   },
 };
