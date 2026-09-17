@@ -6,7 +6,7 @@ console.log(
 );
 
 const transporter = nodemailer.createTransport({
-  host: "smtpout.secureserver.net",
+  host: "smtp.gmail.com",
   port: 465,
   secure: true,
   auth: {
