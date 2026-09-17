@@ -15,10 +15,24 @@ export default function FooterSection() {
       <div className="mt-10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[9px] tracking-[0.25em] font-sans text-neutral-600 uppercase font-medium">
         <span>©2026 ALTTRED NEXXUS AGENCY. ALL RIGHTS RESERVED.</span>
         <div className="flex gap-7">
-          {["TWITTER", "INSTAGRAM", "DRIBBBLE"].map((s) => (
-            <a key={s} href="#" className="hover:text-white transition-colors duration-300">{s}</a>
-          ))}
-        </div>
+        <a
+        href="https://www.linkedin.com/company/alttred-nexxus/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-white transition-colors duration-300"
+    >
+    LINKEDIN
+  </a>
+
+    <a
+    href="https://www.instagram.com/alttrednexxus_?stkn=N2FuZzBhanU1MTJh&utm_source=qr"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-white transition-colors duration-300"
+  >
+    INSTAGRAM
+  </a>
+</div>
       </div>
     </section>
   );

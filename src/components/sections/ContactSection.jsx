@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent]   = useState(false);
   const [busy, setBusy]   = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -19,7 +21,10 @@ export default function ContactSection() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+            ...form,
+            turnstileToken,
+        }),
       });
       if (!res.ok) throw new Error("Failed to send");
       setSent(true);
@@ -120,6 +125,10 @@ export default function ContactSection() {
               </div>
 
               <div className="pt-7 flex flex-col gap-3">
+                <Turnstile
+                  siteKey="0x4AAAAAAE6CEWtfrKTVgHqf"
+                  onSuccess={(token) => setTurnstileToken(token)}
+                />
                 <button
                   type="submit"
                   disabled={busy}

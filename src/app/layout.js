@@ -22,6 +22,7 @@ openGraph: {
   url: "https://www.alttrednexxus.com",
   siteName: "Alttred Nexxus",
   type: "website",
+  images: ["/social-preview.png"],
 },
 verification: {
   google: "-lt8wmrBAeH4hig8vZFMV0nieZqEGvX-gkFyE9Js-iA",

@@ -1,4 +1,9 @@
 import nodemailer from "nodemailer";
+const TURNSTILE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY;
+console.log(
+  "Turnstile secret loaded:",
+  TURNSTILE_SECRET_KEY ? "YES" : "NO"
+);
 
 const transporter = nodemailer.createTransport({
   host: "smtpout.secureserver.net",
@@ -14,7 +19,36 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function POST(req) {
-  const { name, email, message } = await req.json();
+  const { name, email, message, turnstileToken } = await req.json();
+  if (!turnstileToken) {
+  return Response.json(
+    { error: "Please complete the verification." },
+    { status: 400 }
+  );
+}
+const turnstileResponse = await fetch(
+  "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      secret: TURNSTILE_SECRET_KEY,
+      response: turnstileToken,
+    }),
+  }
+);
+
+const turnstileResult = await turnstileResponse.json();
+
+if (!turnstileResult.success) {
+  console.log("Turnstile verification failed:", turnstileResult);
+  return Response.json(
+    { error: "Verification failed. Please try again." },
+    { status: 403 }
+  );
+}
 
   if (!name || !email || !message) {
     return Response.json({ error: "Missing fields" }, { status: 400 });
