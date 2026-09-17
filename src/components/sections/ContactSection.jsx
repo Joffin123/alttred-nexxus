@@ -135,7 +135,7 @@ export default function ContactSection() {
               <div className="pt-7 flex flex-col gap-3">
                 <Turnstile
                   ref={turnstileRef}
-                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAE6CEWtfrKTVgHqf"}
                   onSuccess={(token) => setTurnstileToken(token)}
                   onExpire={() => setTurnstileToken("")}
                   onError={() => setTurnstileToken("")}
