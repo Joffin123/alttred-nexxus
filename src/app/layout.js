@@ -27,9 +27,6 @@ openGraph: {
 verification: {
   google: "-lt8wmrBAeH4hig8vZFMV0nieZqEGvX-gkFyE9Js-iA",
 },
-    icons: {
-    icon: "/favicon.png",
-  },
 };
 
 export default function RootLayout({ children }) {
