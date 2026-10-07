@@ -78,6 +78,13 @@ html.lenis body { height: auto; }
 
 .ticker-track:hover { animation-play-state: paused; }
 
+/* Client strip — two copies of the list, so -50% loops seamlessly */
+.ticker-track--clients { animation-duration: 45s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
 /* ─────────────────────────────────────────
    Glass card
 ───────────────────────────────────────── */
@@ -269,3 +276,15 @@ html.lenis body { height: auto; }
   will-change: transform, text-shadow;
 }
 
+
+/* ─────────────────────────────────────────
+   Purpose section — idle sticker float
+───────────────────────────────────────── */
+.sticker-float {
+  animation: float-y var(--float-dur, 5s) ease-in-out var(--float-delay, 0s) infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticker-float { animation: none; }
+}
