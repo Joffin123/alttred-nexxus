@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function SmoothScroll({ children }) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.4,
+      duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
@@ -20,19 +20,15 @@ export default function SmoothScroll({ children }) {
       infinite: false,
     });
 
-    let rafId;
-    function raf(time) {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    }
-    rafId = requestAnimationFrame(raf);
-
-    lenis.on("scroll", () => {
-      ScrollTrigger.update();
-    });
+    // Drive Lenis from GSAP's ticker so scroll position and ScrollTrigger
+    // animations update in the same frame (no double rAF loop / jitter)
+    lenis.on("scroll", ScrollTrigger.update);
+    const tick = (time) => lenis.raf(time * 1000);
+    gsap.ticker.add(tick);
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
-      cancelAnimationFrame(rafId);
+      gsap.ticker.remove(tick);
       lenis.destroy();
     };
   }, []);

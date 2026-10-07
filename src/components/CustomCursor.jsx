@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 export default function CustomCursor() {
   const cursorRef = useRef(null);
   const dotRef = useRef(null);
-  const gooeySvgRef = useRef(null);
 
   const [isMobile, setIsMobile] = useState(true);
   const [hoveredType, setHoveredType] = useState(""); // "", "magnetic", "inverted", "service", "project"
@@ -131,37 +130,20 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Global SVG Gooey Filter definitions */}
-      <svg className="hidden pointer-events-none" ref={gooeySvgRef}>
-        <defs>
-          <filter id="cursor-gooey">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
-            <feColorMatrix 
-              in="blur" 
-              mode="matrix" 
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" 
-              result="goo" 
-            />
-            <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-          </filter>
-        </defs>
-      </svg>
-
       {/* Main Cursor Element Wrapper */}
       <div 
         className="fixed inset-0 pointer-events-none z-[10000] mix-blend-difference"
-        style={{ filter: "url(#cursor-gooey)" }}
       >
         {/* Core Dot (Tracks cursor perfectly) */}
         <div 
           ref={dotRef}
-          className="absolute w-2 h-2 -ml-1 -mt-1 bg-white rounded-full transition-all duration-150 ease-out"
+          className="absolute w-2 h-2 -ml-1 -mt-1 bg-white rounded-full will-change-transform"
         />
 
         {/* Trail Blob (Gooey effect matches with dot) */}
         <div 
           ref={cursorRef}
-          className={`absolute rounded-full bg-white/40 flex items-center justify-center transition-all duration-300 ease-out
+          className={`absolute rounded-full bg-white/40 flex items-center justify-center will-change-transform transition-[width,height,margin,background-color] duration-300 ease-out
             ${hoveredType === "" ? "w-10 h-10 -ml-5 -mt-5" : ""}
             ${hoveredType === "inverted" ? "w-16 h-16 -ml-8 -mt-8 bg-white" : ""}
             ${hoveredType === "magnetic" ? "w-14 h-14 -ml-7 -mt-7 bg-white" : ""}

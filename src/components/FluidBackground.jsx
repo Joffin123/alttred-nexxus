@@ -139,9 +139,14 @@ export default function FluidBackground() {
 
     const start = performance.now();
     let rafId;
-    const render = () => {
+    // Orbs drift glacially — 30fps is visually identical and halves GPU load,
+    // leaving headroom for scrolling and video decode
+    const FRAME_MS = 1000 / 30;
+    let last = 0;
+    const render = (now = 0) => {
       rafId = requestAnimationFrame(render);
-      if (paused) return;
+      if (paused || now - last < FRAME_MS) return;
+      last = now;
       gl.uniform1f(uTime,   (performance.now() - start) / 1000);
       gl.uniform2f(uMouse,  mouseRef.current[0], mouseRef.current[1]);
       gl.uniform1f(uScroll, scrollRef.current);

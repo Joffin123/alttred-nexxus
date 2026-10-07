@@ -69,29 +69,29 @@ export const PROJECTS = [
 export const WORK_GALLERY = {
   left: [
     {
-      type: "video", src: "/landing%20projects/salt.mp4", ratio: "16 / 10",
+      type: "video", src: "/videos/web/salt.mp4", ratio: "16 / 10",
       tag: "Oral Care", href: "https://saltoralcare.com/",
       title: "Salt Oral Care", subtitle: "Performance Creatives",
     },
     {
-      type: "image", src: "/landing%20projects/tann-trim.png", ratio: "7 / 6",
+      type: "image", src: "/videos/web/tann-trim.webp", ratio: "7 / 6",
       tag: "Fashion", href: "https://www.tanntrim.com/",
       title: "Tanntrim", subtitle: "Website Design & Development",
     },
     {
-      type: "video", src: "/landing%20projects/carbonado.mp4", ratio: "2 / 1",
+      type: "video", src: "/videos/web/carbonado.mp4", ratio: "2 / 1",
       tag: "Travel", href: "https://www.thecarbonado.com",
       title: "Carbonado", subtitle: "Website Design & Development",
     },
   ],
   right: [
     {
-      type: "image", src: "/landing%20projects/ultraviolette.png", ratio: "5 / 7",
+      type: "image", src: "/videos/web/ultraviolette.webp", ratio: "5 / 7",
       tag: "Automotive", href: "https://airspace.ultraviolette.com/",
       title: "UV Airspace", subtitle: "Website Development & Performance Creatives",
     },
     {
-      type: "image", src: "/landing%20projects/aminu.png", ratio: "5 / 7",
+      type: "image", src: "/videos/web/aminu.webp", ratio: "5 / 7",
       tag: "Skincare", href: "https://www.aminu.life/",
       title: "Aminu", subtitle: "Performance Creatives & Website Design",
     },
@@ -99,7 +99,7 @@ export const WORK_GALLERY = {
 };
 
 export const SHOWREEL = [
-  { label: "METRO CASH & CARRY — DIWALI CAMPAIGN FILM", video: "/videos/video 1.mp4", num: "01" },
-  { label: "PASCAL SERO — ORACLE",                      video: "/videos/video 2.mp4", num: "02" },
-  { label: "MANIPAL UNIVERSITY",                        video: "/videos/video 3.mp4", num: "03" },
+  { label: "METRO CASH & CARRY — DIWALI CAMPAIGN FILM", video: "/videos/web/showreel-1.mp4", num: "01" },
+  { label: "PASCAL SERO — ORACLE",                      video: "/videos/web/showreel-2.mp4", num: "02" },
+  { label: "MANIPAL UNIVERSITY",                        video: "/videos/web/showreel-3.mp4", num: "03" },
 ];
