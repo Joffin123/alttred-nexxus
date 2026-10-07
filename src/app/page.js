@@ -12,7 +12,6 @@ import SmoothScroll from "@/components/SmoothScroll";
 import NavBar from "@/components/sections/NavBar";
 import HeroSection from "@/components/sections/HeroSection";
 import PurposeSection from "@/components/sections/PurposeSection";
-import StatementSection from "@/components/sections/StatementSection";
 import MarqueeSection from "@/components/sections/MarqueeSection";
 // Agency intro hidden for now — the nav "About" link now targets the statement section
 // import AgencyIntro from "@/components/sections/AgencyIntro";
@@ -47,7 +46,6 @@ export default function Home() {
                 <NavBar />
                 <HeroSection />
                 <PurposeSection />
-                <StatementSection />
                 <MarqueeSection />
                 {/* <AgencyIntro /> */}
                 {/* <ShowreelSection /> */}
