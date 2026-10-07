@@ -12,7 +12,8 @@ import NavBar from "@/components/sections/NavBar";
 import HeroSection from "@/components/sections/HeroSection";
 import MarqueeSection from "@/components/sections/MarqueeSection";
 import AgencyIntro from "@/components/sections/AgencyIntro";
-import ShowreelSection from "@/components/sections/ShowreelSection";
+// Showreel hidden for now — films are featured in the hero instead
+// import ShowreelSection from "@/components/sections/ShowreelSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import WorkGallerySection from "@/components/sections/WorkGallerySection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
@@ -42,7 +43,7 @@ export default function Home() {
                 <HeroSection />
                 <MarqueeSection />
                 <AgencyIntro />
-                <ShowreelSection />
+                {/* <ShowreelSection /> */}
                 <ServicesSection />
                 <WorkGallerySection />
                 <ProjectsSection />
