@@ -31,14 +31,14 @@ export default function NavBar() {
       <nav
         className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-14 py-3 md:py-5 select-none transition-all duration-500 bg-black md:bg-transparent ${
           scrolled || menuOpen
-            ? "md:bg-[#030303]/90 md:backdrop-blur-md border-b border-neutral-900/60"
-            : "border-b border-transparent"
+            ? "md:bg-[#030303]/90 md:backdrop-blur-md"
+            : ""
         }`}
       >
         {/* Logo — flex-1 left */}
-        <div className="flex-1">
+        <div className="flex-1 flex items-center">
           <a href="#hero" onClick={close} aria-label="Alttred Nexxus — home"
-            className="inline-block hover:opacity-60 transition-opacity relative z-50">
+            className="flex items-center hover:opacity-60 transition-opacity relative z-50">
             <img
               src="/new-logo.svg"
               alt="Alttred Nexxus"

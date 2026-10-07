@@ -6,7 +6,7 @@ export default function MarqueeSection() {
   return (
     <section
       aria-label="Clients"
-      className="w-full bg-[#F8EF3B] border-y-2 border-black py-6 md:py-8 overflow-hidden"
+      className="w-full bg-[#F8EF3B] border-t-2 border-black py-6 md:py-8 overflow-hidden"
     >
       <div className="ticker-track ticker-track--clients">
         {[...PARTNERS, ...PARTNERS].map((p, i) => (

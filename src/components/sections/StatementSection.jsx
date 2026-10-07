@@ -56,16 +56,17 @@ export default function StatementSection() {
       ref={sectionRef}
       id="about"
       aria-label="About Alttred Nexxus"
-      className="relative w-full bg-black h-[200vh]"
+      // Shorter on mobile so the letter reveal finishes in less scroll — quicker, more responsive to a thumb swipe
+      className="relative w-full bg-black h-[160vh] md:h-[200vh]"
     >
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden flex items-center">
         <motion.div
           style={reduce ? undefined : { y: enterY, opacity: enterOp }}
-          className="w-full px-8 md:px-14 will-change-transform"
+          className="w-full px-6 md:px-14 will-change-transform"
         >
           <p
             aria-label={PARAGRAPH}
-            className="mx-auto max-w-[18ch] md:max-w-[22ch] text-left md:text-center font-sans font-medium text-white text-[clamp(2.1rem,8.6vw,5.25rem)] leading-[1.24] md:leading-[1.12] tracking-[-0.015em]"
+            className="mx-auto max-w-[18ch] md:max-w-[22ch] text-left md:text-center font-sans font-medium text-white text-[clamp(2.5rem,10.4vw,5.25rem)] md:text-[clamp(2.1rem,8.6vw,5.25rem)] leading-[1.32] md:leading-[1.12] tracking-[-0.015em]"
           >
             {words.map((word, w) => (
               <span key={w} aria-hidden="true">
