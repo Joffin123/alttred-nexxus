@@ -15,13 +15,15 @@ import HeroSection from "@/components/sections/HeroSection";
 // import PurposeSection from "@/components/sections/PurposeSection";
 import StatementSection from "@/components/sections/StatementSection";
 import MarqueeSection from "@/components/sections/MarqueeSection";
+import CaseStudySection from "@/components/sections/CaseStudySection";
 // Agency intro hidden for now — the nav "About" link now targets the statement section
 // import AgencyIntro from "@/components/sections/AgencyIntro";
 // Showreel hidden for now — films are featured in the hero instead
 // import ShowreelSection from "@/components/sections/ShowreelSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import WorkGallerySection from "@/components/sections/WorkGallerySection";
-import ProjectsSection from "@/components/sections/ProjectsSection";
+// Old "Case Study" block — replaced by CaseStudySection (same content, new design)
+// import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import FooterSection from "@/components/sections/FooterSection";
 
@@ -50,11 +52,12 @@ export default function Home() {
                 {/* <PurposeSection /> */}
                 <StatementSection />
                 <MarqueeSection />
+                <CaseStudySection />
+                <ServicesSection />
                 {/* <AgencyIntro /> */}
                 {/* <ShowreelSection /> */}
-                <ServicesSection />
                 <WorkGallerySection />
-                <ProjectsSection />
+                {/* <ProjectsSection /> */}
                 <ContactSection />
                 <FooterSection />
               </main>

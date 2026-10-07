@@ -103,3 +103,51 @@ export const SHOWREEL = [
   { label: "PASCAL SERO — ORACLE",                      video: "/videos/web/showreel-2.mp4", num: "02" },
   { label: "MANIPAL UNIVERSITY",                        video: "/videos/web/showreel-3.mp4", num: "03" },
 ];
+
+// Case studies shown under the client strip
+export const CASE_STUDIES = [
+  {
+    client: "Aminu",
+    title: "Increased the performance for the website homepage and PDP",
+    image: "/projects/aminu.webp",
+    alt: "Aminu skincare campaign — model holding Aminu sunscreen",
+    href: "/case-study/aminu",
+  },
+  {
+    // Yuvaan Jewels slot — placeholder until the case study is ready
+    client: "Yuvaan Jewels",
+    title: "New case study coming soon",
+    comingSoon: true,
+  },
+];
+
+// "What we do" — accordion rows
+export const WHAT_WE_DO = {
+  intro: {
+    lead: "From First Click To Final Checkout, We Build",
+    highlight: "The Creative, Campaigns And Experiences",
+    tail: "That Make Brands Perform.",
+  },
+  items: [
+    {
+      title: "Performance Marketing",
+      desc: "Paid campaigns planned, launched and optimised against the numbers that matter — ROAS, CAC and revenue, not vanity metrics.",
+      points: ["Meta & Google Ads", "Funnel Strategy", "Creative Testing", "Analytics & Reporting"],
+    },
+    {
+      title: "Brand Creatives",
+      desc: "Brand films, product launches and campaign content. We shoot, edit and deliver stories that move people — and algorithms.",
+      points: ["Brand Films", "Product Shoots", "Campaign Content", "Ad Creatives"],
+    },
+    {
+      title: "Social Media Management",
+      desc: "Always-on content, calendars and community, so your brand shows up consistently and keeps the conversation going.",
+      points: ["Content Calendars", "Reels & Short-Form", "Community Management", "Influencer Collaborations"],
+    },
+    {
+      title: "Experience Design",
+      desc: "Websites that do the selling. We design and build conversion-focused experiences that reflect your brand at its best.",
+      points: ["UX / UI Design", "Website Development", "E-commerce & Shopify", "Landing Pages"],
+    },
+  ],
+};

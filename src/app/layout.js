@@ -1,10 +1,20 @@
-import { Manrope } from "next/font/google";
+import { Manrope, Shantell_Sans } from "next/font/google";
 import "./globals.css";
 
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-chakra",
   weight: ["200", "300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+// Handwritten accent ("we do"). Stand-in for Figma Hand until its font file is
+// added — swap this for next/font/local pointing at that file.
+const hand = Shantell_Sans({
+  subsets: ["latin"],
+  variable: "--font-hand",
+  weight: ["800"],
+  style: ["italic"],
   display: "swap",
 });
 
@@ -33,7 +43,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${manrope.variable} h-full scroll-smooth`}
+      className={`${manrope.variable} ${hand.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-[#030303] text-white antialiased">
         {children}

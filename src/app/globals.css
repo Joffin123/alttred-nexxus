@@ -277,3 +277,19 @@ html.lenis body { height: auto; }
 }
 
 
+
+/* ─────────────────────────────────────────
+   What we do — idle wobble on the "????"
+───────────────────────────────────────── */
+@keyframes wwd-wobble {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50%      { transform: rotate(-8deg) translateY(-0.04em); }
+}
+
+.wwd-wobble {
+  animation: wwd-wobble 2.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wwd-wobble { animation: none; }
+}

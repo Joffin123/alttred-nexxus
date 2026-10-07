@@ -3,24 +3,37 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Banner films — web-compressed copies of /public/new-banner-videos
 const SLIDES = [
   {
     client: "ORACLE",
     caption: "Delivered a high-impact video shoot for the brand.",
-    video: "/hero-oracle.mp4",
-    poster: "/hero-oracle-poster.jpg",
+    video: "/hero/oracle.mp4",
+    poster: "/hero/oracle-poster.jpg",
+  },
+  {
+    client: "SALT ORAL CARE",
+    caption: "Delivering performance marketing assets built for more conversions.",
+    video: "/hero/salt.mp4",
+    poster: "/hero/salt-poster.jpg",
+  },
+  {
+    client: "CARBONADO",
+    caption: "Built a Shopify storefront with a seamless user experience.",
+    video: "/hero/bag.mp4",
+    poster: "/hero/bag-poster.jpg",
   },
   {
     client: "METRO CASH & CARRY",
     caption: "Produced a Diwali campaign film for the brand.",
-    video: "/hero-metro.mp4",
-    poster: "/hero-metro-poster.jpg",
+    video: "/hero/metro.mp4",
+    poster: "/hero/metro-poster.jpg",
   },
   {
     client: "MANIPAL UNIVERSITY",
     caption: "Crafted a New Year campaign film for Online Manipal.",
-    video: "/hero-manipal.mp4",
-    poster: "/hero-manipal-poster.jpg",
+    video: "/hero/manipal.mp4",
+    poster: "/hero/manipal-poster.jpg",
   },
 ];
 
