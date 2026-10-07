@@ -168,11 +168,6 @@ html.lenis body { height: auto; }
   100% { top: 100%; opacity: 0; }
 }
 
-@keyframes shimmer-sweep {
-  0%   { transform: translateX(-130%) skewX(-15deg); }
-  100% { transform: translateX(260%) skewX(-15deg); }
-}
-
 @keyframes glow-pulse {
   0%, 100% { opacity: 0.4; filter: blur(8px); }
   50%       { opacity: 1;   filter: blur(3px); }
@@ -220,22 +215,6 @@ html.lenis body { height: auto; }
 }
 
 /* Shimmer overlay — used on footer giant text */
-.shimmer-overlay {
-  position: relative;
-  overflow: hidden;
-}
-.shimmer-overlay::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.11), transparent);
-  transform: translateX(-130%) skewX(-15deg);
-  animation: shimmer-sweep 9s ease-in-out infinite 5s;
-  pointer-events: none;
-}
 
 /* Floating glow dot accent */
 .glow-dot {

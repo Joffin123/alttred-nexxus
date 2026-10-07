@@ -50,12 +50,12 @@ export default function ContactSection() {
   };
 
   const field =
-    "w-full bg-transparent text-white font-sans text-sm placeholder-neutral-500 outline-none";
+    "w-full bg-transparent text-white font-sans text-base md:text-[17px] placeholder-neutral-500 outline-none";
 
   return (
     <section
       id="contact"
-      className="w-full bg-[#030303] py-20 md:py-24 px-8 md:px-14 border-t border-neutral-900"
+      className="w-full bg-[#030303] py-20 md:py-28 px-6 md:px-14 border-t border-neutral-900"
     >
       <div className="max-w-3xl mx-auto">
 
@@ -78,15 +78,15 @@ export default function ContactSection() {
                 </h2>
               </div>
               <div className="flex flex-col gap-2">
-                <p className="text-[10px] tracking-[0.25em] font-sans text-neutral-300 uppercase">
+                <p className="text-[12px] tracking-[0.14em] font-sans font-semibold text-neutral-300 uppercase">
                   Response within 24 hrs
                 </p>
-                <p className="text-[10px] font-sans text-neutral-500 leading-relaxed">
+                <p className="text-[14px] md:text-[15px] font-sans text-neutral-400 leading-relaxed">
                   You can contact enquiries on this mail id
                 </p>
                 <a
                   href="mailto:matts@alttrednexxus.com"
-                  className="text-xs font-sans text-neutral-300 hover:text-white transition-colors duration-300"
+                  className="text-[16px] md:text-[17px] font-sans text-white underline-offset-4 hover:underline transition-colors duration-300"
                 >
                   matts@alttrednexxus.com
                 </a>
@@ -103,7 +103,7 @@ export default function ContactSection() {
                 className="flex flex-col justify-between min-h-[320px] md:min-h-[380px]"
               >
                 <div className="flex flex-col gap-5">
-                  <p className="text-[9px] tracking-[0.3em] font-sans font-bold text-neutral-300 uppercase">
+                  <p className="text-[12px] tracking-[0.14em] font-sans font-semibold text-neutral-300 uppercase">
                     Message sent
                   </p>
                   <h3 className="font-sans font-semibold text-3xl md:text-4xl tracking-tight text-white uppercase leading-[1.1]">
@@ -111,7 +111,7 @@ export default function ContactSection() {
                     <br />
                     <span className="text-neutral-400">We&apos;ll be in touch.</span>
                   </h3>
-                  <p className="text-xs font-sans text-neutral-500 leading-relaxed max-w-xs">
+                  <p className="text-[15px] font-sans text-neutral-400 leading-relaxed max-w-sm">
                     Expect a reply within 24 hours at{" "}
                     <span className="text-neutral-300">{form.email}</span>.
                   </p>
@@ -120,7 +120,7 @@ export default function ContactSection() {
                   <button
                     type="button"
                     onClick={reset}
-                    className="text-[10px] tracking-[0.28em] font-sans font-bold uppercase text-neutral-400 hover:text-white transition-colors duration-300"
+                    className="text-[12px] tracking-[0.14em] font-sans font-semibold uppercase text-neutral-400 hover:text-white transition-colors duration-300"
                   >
                     Send another message
                   </button>
@@ -130,33 +130,33 @@ export default function ContactSection() {
             <form onSubmit={onSubmit} className="flex flex-col gap-0">
 
               <div className="group pb-5 mb-5 border-b border-neutral-600 focus-within:border-white transition-colors duration-300">
-                <label className="block text-[9px] tracking-[0.3em] font-sans font-bold text-neutral-300 uppercase mb-2.5 group-focus-within:text-white transition-colors duration-300">
+                <label htmlFor="contact-name" className="block text-[12px] tracking-[0.14em] font-sans font-semibold text-neutral-300 uppercase mb-3 group-focus-within:text-white transition-colors duration-300">
                   Name
                 </label>
                 <input
-                  type="text" name="name" value={form.name} onChange={onChange}
+                  id="contact-name" type="text" name="name" autoComplete="name" value={form.name} onChange={onChange}
                   required placeholder="Your full name"
                   className={field}
                 />
               </div>
 
               <div className="group pb-5 mb-5 border-b border-neutral-600 focus-within:border-white transition-colors duration-300">
-                <label className="block text-[9px] tracking-[0.3em] font-sans font-bold text-neutral-300 uppercase mb-2.5 group-focus-within:text-white transition-colors duration-300">
+                <label htmlFor="contact-email" className="block text-[12px] tracking-[0.14em] font-sans font-semibold text-neutral-300 uppercase mb-3 group-focus-within:text-white transition-colors duration-300">
                   Email
                 </label>
                 <input
-                  type="email" name="email" value={form.email} onChange={onChange}
+                  id="contact-email" type="email" name="email" autoComplete="email" value={form.email} onChange={onChange}
                   required placeholder="your@email.com"
                   className={field}
                 />
               </div>
 
               <div className="group pb-5 border-b border-neutral-600 focus-within:border-white transition-colors duration-300">
-                <label className="block text-[9px] tracking-[0.3em] font-sans font-bold text-neutral-300 uppercase mb-2.5 group-focus-within:text-white transition-colors duration-300">
+                <label htmlFor="contact-message" className="block text-[12px] tracking-[0.14em] font-sans font-semibold text-neutral-300 uppercase mb-3 group-focus-within:text-white transition-colors duration-300">
                   Message
                 </label>
                 <textarea
-                  name="message" value={form.message} onChange={onChange}
+                  id="contact-message" name="message" value={form.message} onChange={onChange}
                   required placeholder="Tell us about your project…"
                   rows={4}
                   className={`${field} resize-none`}
@@ -174,12 +174,12 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={busy}
-                  className="text-[10px] tracking-[0.28em] font-sans font-bold uppercase text-black bg-white px-8 py-3.5 rounded-full hover:bg-neutral-300 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="text-[13px] tracking-[0.14em] font-sans font-bold uppercase text-black bg-white px-8 py-4 rounded-full hover:bg-neutral-300 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {busy ? "SENDING…" : "SEND MESSAGE"}
                 </button>
                 {error && (
-                  <p className="text-[10px] font-sans text-red-400 tracking-wide">{error}</p>
+                  <p role="alert" className="text-[14px] font-sans text-red-400">{error}</p>
                 )}
               </div>
             </form>

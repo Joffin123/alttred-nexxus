@@ -57,16 +57,16 @@ function GalleryCard({ item }) {
           />
         )}
 
-        <span className="absolute top-3 left-3 z-10 text-[8px] md:text-[9px] tracking-wide font-sans font-medium bg-black/45 text-white/90 px-2.5 py-1 rounded-full backdrop-blur-md">
+        <span className="absolute top-2.5 left-2.5 md:top-4 md:left-4 z-10 text-[11px] md:text-[12px] tracking-[0.01em] font-sans font-medium bg-black/50 text-white px-2.5 py-1 md:px-3 rounded-full backdrop-blur-md">
           {item.tag}
         </span>
       </div>
 
-      <div className="pt-2.5">
-        <h3 className="font-sans font-semibold text-sm md:text-[15px] text-neutral-900 leading-snug">
+      <div className="pt-3 md:pt-4">
+        <h3 className="font-sans font-medium text-[16px] md:text-[20px] tracking-[-0.01em] text-neutral-900 leading-tight">
           {item.title}
         </h3>
-        <p className="font-sans text-[11px] md:text-xs text-neutral-400 leading-snug">
+        <p className="mt-1 font-sans text-[13px] md:text-[15px] text-neutral-500 leading-snug">
           {item.subtitle}
         </p>
       </div>
@@ -76,14 +76,14 @@ function GalleryCard({ item }) {
 
 export default function WorkGallerySection() {
   return (
-    <section id="work-gallery" className="w-full bg-white text-black pt-4 pb-16 md:pt-10 md:pb-20">
+    <section id="work-gallery" className="w-full bg-white text-black pt-16 md:pt-24 pb-20 md:pb-28">
 
       {/* Header */}
-      <div className="px-8 md:px-14 mb-10 md:mb-14 border-t border-neutral-200 pt-10 md:pt-14">
+      <div className="px-6 md:px-14 mb-10 md:mb-14">
         {/* <p className="text-[10px] tracking-[0.35em] text-neutral-400 uppercase font-sans font-bold mb-3">
           RECENT WORK
         </p> */}
-        <h2 className="font-sans font-semibold text-3xl md:text-5xl tracking-tight text-neutral-900 leading-tight">
+        <h2 className="font-sans font-medium text-[34px] md:text-[clamp(2.75rem,4.5vw,4rem)] tracking-[-0.02em] text-neutral-900 leading-[1.05]">
           Featured{" "}
           <span className="text-neutral-500">Works</span>
         </h2>
@@ -91,7 +91,7 @@ export default function WorkGallerySection() {
 
       {/* Two-column staggered gallery — left column is wider */}
       <div
-        className="px-8 md:px-14 grid gap-4 md:gap-6 items-start"
+        className="px-6 md:px-14 grid gap-4 md:gap-6 items-start"
         style={{ gridTemplateColumns: "1.28fr 1fr" }}
       >
         <div className="flex flex-col gap-5 md:gap-7">

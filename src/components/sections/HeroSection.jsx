@@ -3,36 +3,43 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Banner films — web-compressed copies of /public/new-banner-videos
+// Banner films — web-compressed copies of /public/new-banner-videos.
+// `focus` = horizontal crop point on phones, where only the middle ~26% of the
+// 16:9 frame is visible — set per film so its subject stays in shot.
 const SLIDES = [
   {
     client: "ORACLE",
     caption: "Delivered a high-impact video shoot for the brand.",
     video: "/hero/oracle.mp4",
+    focus: "55%",
     poster: "/hero/oracle-poster.jpg",
   },
   {
     client: "SALT ORAL CARE",
     caption: "Delivering performance marketing assets built for more conversions.",
     video: "/hero/salt.mp4",
+    focus: "50%",
     poster: "/hero/salt-poster.jpg",
   },
   {
     client: "CARBONADO",
     caption: "Built a Shopify storefront with a seamless user experience.",
     video: "/hero/bag.mp4",
+    focus: "48%",
     poster: "/hero/bag-poster.jpg",
   },
   {
     client: "METRO CASH & CARRY",
     caption: "Produced a Diwali campaign film for the brand.",
     video: "/hero/metro.mp4",
+    focus: "40%",
     poster: "/hero/metro-poster.jpg",
   },
   {
     client: "MANIPAL UNIVERSITY",
     caption: "Crafted a New Year campaign film for Online Manipal.",
     video: "/hero/manipal.mp4",
+    focus: "45%",
     poster: "/hero/manipal-poster.jpg",
   },
 ];
@@ -149,7 +156,8 @@ export default function HeroSection() {
             preload={i === 0 ? "auto" : "metadata"}
             onEnded={i === active ? next : undefined}
             aria-hidden="true"
-            className={`absolute inset-0 w-full h-full object-cover object-[62%_center] md:object-center transition-opacity duration-700 ${
+            style={{ "--focus": s.focus }}
+            className={`absolute inset-0 w-full h-full object-cover object-[var(--focus)_center] md:object-center transition-opacity duration-700 ${
               i === active ? "opacity-100" : "opacity-0"
             }`}
           />

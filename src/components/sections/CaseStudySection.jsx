@@ -35,7 +35,7 @@ function CaseStudyCard({ item, index }) {
         }}
         className="relative w-full aspect-[4/3] overflow-hidden bg-neutral-100"
       >
-        {item.comingSoon ? (
+        {!item.image ? (
           <motion.div
             variants={{
               hidden: { scale: 1.15 },
@@ -51,6 +51,7 @@ function CaseStudyCard({ item, index }) {
           <motion.img
             src={item.image}
             alt={item.alt}
+            style={item.focus ? { objectPosition: item.focus } : undefined}
             loading="lazy"
             decoding="async"
             variants={{

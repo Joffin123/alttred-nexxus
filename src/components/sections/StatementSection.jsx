@@ -7,7 +7,7 @@ const PARAGRAPH =
   "We build digital experiences, create scroll-stopping content, and make creative that performs.";
 
 // Scroll timeline across the pinned section (0 → 1)
-const LIGHT = [0.04, 0.86];   // paragraph lights up; 0.86 → 1 holds fully lit, then the page moves on
+const LIGHT = [0.02, 0.82];   // paragraph lights up; 0.82 → 1 holds fully lit, then the page moves on
 // Each letter fades over a window ~10 letters wide, overlapping its neighbours,
 // so the white flows across the text as a soft gradient instead of stepping
 const SOFTNESS = 10;
@@ -56,16 +56,16 @@ export default function StatementSection() {
       ref={sectionRef}
       id="about"
       aria-label="About Alttred Nexxus"
-      className="relative w-full bg-black h-[260vh]"
+      className="relative w-full bg-black h-[200vh]"
     >
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden flex items-center">
         <motion.div
           style={reduce ? undefined : { y: enterY, opacity: enterOp }}
-          className="w-full px-6 md:px-14 will-change-transform"
+          className="w-full px-8 md:px-14 will-change-transform"
         >
           <p
             aria-label={PARAGRAPH}
-            className="mx-auto max-w-[17ch] md:max-w-[22ch] text-left md:text-center font-sans font-medium text-white text-[clamp(2.1rem,8.6vw,5.25rem)] leading-[1.12] tracking-[-0.015em]"
+            className="mx-auto max-w-[18ch] md:max-w-[22ch] text-left md:text-center font-sans font-medium text-white text-[clamp(2.1rem,8.6vw,5.25rem)] leading-[1.24] md:leading-[1.12] tracking-[-0.015em]"
           >
             {words.map((word, w) => (
               <span key={w} aria-hidden="true">

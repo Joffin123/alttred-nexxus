@@ -109,14 +109,18 @@ export const CASE_STUDIES = [
   {
     client: "Aminu",
     title: "Increased the performance for the website homepage and PDP",
-    image: "/projects/aminu.webp",
-    alt: "Aminu skincare campaign — model holding Aminu sunscreen",
+    image: "/videos/web/aminu.webp",
+    alt: "Aminu skincare campaign — model applying Aminu cream",
+    // portrait photo in a landscape card — keep the face and product in frame
+    focus: "50% 30%",
     href: "/case-study/aminu",
   },
   {
-    // Yuvaan Jewels slot — placeholder until the case study is ready
+    // Yuvaan Jewels — image is live, case study page still to come (not a link yet)
     client: "Yuvaan Jewels",
     title: "New case study coming soon",
+    image: "/projects/yuvaan.webp",
+    alt: "Yuvaan Jewels — model wearing gold temple jewellery",
     comingSoon: true,
   },
 ];
