@@ -6,8 +6,8 @@ const YELLOW = "#F8EF3B";
 const EASE = [0.22, 1, 0.36, 1];
 
 const EMAIL = "matts@alttrednexxus.com";
-const PHONE_DISPLAY = "+91 7012507771";
-const PHONE_HREF = "tel:+917012507771";
+const PHONE_DISPLAY = "+91 63632 02742";
+const PHONE_HREF = "tel:+916363202742";
 
 const SOCIALS = [
   {
