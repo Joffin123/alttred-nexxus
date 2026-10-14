@@ -115,14 +115,6 @@ export const CASE_STUDIES = [
     focus: "50% 30%",
     href: "/case-study/aminu",
   },
-  {
-    // Yuvaan Jewels — image is live, case study page still to come (not a link yet)
-    client: "Yuvaan Jewels",
-    title: "New case study coming soon",
-    image: "/projects/yuvaan.webp",
-    alt: "Yuvaan Jewels — model wearing gold temple jewellery",
-    comingSoon: true,
-  },
 ];
 
 // "What we do" — accordion rows
